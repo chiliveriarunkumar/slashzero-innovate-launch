@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [videoOpen, setVideoOpen] = useState(false);
@@ -25,7 +26,7 @@ const Hero = () => {
                 width: `${Math.random() * 300 + 50}px`,
                 height: `${Math.random() * 300 + 50}px`,
                 opacity: Math.random() * 0.3,
-                animationDuration: `${Math.random() * 10 + 10}s`,
+                animation: `float ${Math.random() * 10 + 10}s infinite ease-in-out`,
                 animationDelay: `${Math.random() * 5}s`,
               }}
             />
@@ -35,15 +36,34 @@ const Hero = () => {
       
       <div className="section-container relative z-10 text-center text-white">
         <div className="space-y-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in">
-            🚀 Empowering Innovation through Applied Technology
-          </h1>
-          <p className="text-xl md:text-2xl text-white/80 animate-fade-in animate-delay-100">
-            Bridging the gap between theory and practical innovation in IoT, Robotics, AI, Design, and Development.
-          </p>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
+          >
+            🚀 Empowering Innovation through <span className="text-gradient bg-clip-text bg-gradient-to-r from-white via-slash-teal/90 to-white text-transparent">Applied Technology</span>
+          </motion.h1>
           
-          <div className="flex flex-wrap justify-center gap-4 pt-6 animate-fade-in animate-delay-200">
-            <Button className="gradient-btn text-lg px-8 py-6" size="lg">
+          <motion.p 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="text-xl md:text-2xl text-white/80"
+          >
+            Bridging the gap between theory and practical innovation in IoT, Robotics, AI, Design, and Development.
+          </motion.p>
+          
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex flex-wrap justify-center gap-4 pt-6"
+          >
+            <Button 
+              className="bg-white text-slash-blue hover:bg-white/90 text-lg px-8 py-6 rounded-lg shadow-lg" 
+              size="lg"
+            >
               🎓 Explore Programs
             </Button>
             <Button
@@ -55,7 +75,7 @@ const Hero = () => {
               <Play className="h-5 w-5" />
               📺 Watch Intro Video
             </Button>
-          </div>
+          </motion.div>
           
           {/* Bouncing down arrow */}
           <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-subtle opacity-70">

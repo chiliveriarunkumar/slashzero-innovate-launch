@@ -19,7 +19,7 @@
     --primary: 151 59% 30%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 84% 39%;
+    --secondary: 186 100% 42%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
@@ -35,7 +35,7 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 151 59% 30%;
 
-    --radius: 0.75rem;
+    --radius: 1rem;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -60,7 +60,7 @@
     --primary: 151 59% 30%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 160 84% 39%;
+    --secondary: 186 100% 42%;
     --secondary-foreground: 210 40% 98%;
 
     --muted: 217.2 32.6% 17.5%;
@@ -98,11 +98,15 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-poppins font-medium;
   }
+  
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer components {
   .gradient-btn {
-    @apply bg-gradient-to-r from-emerald-600 to-teal-500 text-white font-medium px-6 py-3 rounded-lg hover:from-emerald-700 hover:to-teal-600 transition-all duration-300 animate-gradient-flow bg-size-200;
+    @apply bg-gradient-to-r from-slash-teal to-emerald-500 text-white font-medium px-6 py-3 rounded-lg hover:from-slash-teal/90 hover:to-emerald-600 transition-all duration-300 animate-gradient-flow bg-size-200 shadow-lg shadow-slash-teal/20;
   }
   
   .section-container {
@@ -110,7 +114,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-emerald-800;
+    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-slash-blue;
   }
 
   .card-hover {
@@ -148,5 +152,9 @@
   
   .in-viewport {
     @apply animate-fade-in;
+  }
+  
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
   }
 }
