@@ -5,7 +5,7 @@ import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Layers, Code, Smartphone, Cube, BarChart3, Download } from "lucide-react";
+import { Layers, Code, Smartphone, Box, BarChart3, Download } from "lucide-react";
 
 const Programs = () => {
   // Scroll to top when page loads
@@ -46,7 +46,7 @@ const Programs = () => {
     {
       title: "3D Printing",
       description: "Prototyping, fabrication, and additive manufacturing",
-      icon: <Cube className="h-12 w-12 text-emerald-500" />,
+      icon: <Box className="h-12 w-12 text-emerald-500" />,
       sessions: 10,
       duration: "4 months"
     },
