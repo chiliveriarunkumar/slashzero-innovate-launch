@@ -1,22 +1,31 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, CalendarDays, BookOpen, GraduationCap } from "lucide-react";
+import { ArrowRight, Clock, Book, CheckCircle2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 
 interface ProgramCardProps {
   title: string;
   description: string;
-  image: string;
+  color: string;
   index: number;
   grade: string;
   duration: string;
-  level: string;
   skills: string[];
+  icon: React.ReactNode;
 }
 
-const ProgramCard = ({ title, description, image, index, grade, duration, level, skills }: ProgramCardProps) => {
+const ProgramCard = ({ 
+  title, 
+  description, 
+  color, 
+  index, 
+  grade, 
+  duration, 
+  skills, 
+  icon 
+}: ProgramCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   
@@ -44,53 +53,40 @@ const ProgramCard = ({ title, description, image, index, grade, duration, level,
 
   return (
     <Card 
-      className="overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 appear-animation border border-slate-100"
+      className="overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 appear-animation border border-slate-100 h-full"
       style={{ animationDelay: `${index * 150}ms` }}
       ref={cardRef}
     >
-      <div className="h-48 overflow-hidden relative">
-        <img 
-          src={image} 
-          alt={title} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-        />
-        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slash-teal px-3 py-1 rounded-full text-sm font-medium">
-          {grade}
+      <div className={`p-6 ${color} text-white`}>
+        <div className="h-10 w-10 bg-white/20 rounded-full flex items-center justify-center mb-4">
+          {icon}
         </div>
+        <h3 className="text-xl font-bold mb-1">{grade}</h3>
+        <p className="font-medium">{title}</p>
       </div>
       <CardContent className="p-6">
-        <h3 className="text-xl font-semibold text-slash-blue mb-2">{title}</h3>
-        <p className="text-gray-600 mb-4">{description}</p>
+        <p className="text-slate-600 mb-4">{description}</p>
         
-        <div className="grid grid-cols-2 gap-3 text-sm mb-5">
-          <div className="flex items-center text-slate-600">
-            <Clock className="h-4 w-4 mr-2 text-slash-teal" />
-            {duration}
-          </div>
-          <div className="flex items-center text-slate-600">
-            <GraduationCap className="h-4 w-4 mr-2 text-slash-teal" />
-            {level}
-          </div>
-          <div className="flex items-center text-slate-600 col-span-2">
-            <BookOpen className="h-4 w-4 mr-2 text-slash-teal" />
-            Key Skills
-          </div>
+        <div className="mb-4 flex items-center text-slate-700 text-sm">
+          <Clock className="h-4 w-4 mr-2 text-slate-500" />
+          {duration}
         </div>
         
-        <div className="mb-4 flex flex-wrap gap-2">
-          {skills.map((skill, i) => (
-            <span 
-              key={i} 
-              className="inline-flex items-center text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full"
-            >
-              {skill}
-            </span>
-          ))}
+        <div className="mb-5">
+          <h4 className="text-sm font-semibold text-slate-700 mb-3">Key Skills:</h4>
+          <ul className="space-y-2">
+            {skills.slice(0, 3).map((skill, i) => (
+              <li key={i} className="flex items-start">
+                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 shrink-0" />
+                <span className="text-sm text-slate-600">{skill}</span>
+              </li>
+            ))}
+          </ul>
         </div>
         
         <Button 
           variant="ghost" 
-          className="text-slash-teal hover:text-slash-blue hover:bg-slash-lightGray flex items-center p-0"
+          className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 flex items-center p-0"
           onClick={() => navigate('/programs')}
         >
           Learn More <ArrowRight className="ml-2 h-4 w-4" />
@@ -128,40 +124,56 @@ const ProgramsSection = () => {
 
   const programs = [
     {
-      title: "Introduction to IoT",
+      title: "Introduction to Internet of Things (IoT)",
       grade: "6th Grade",
-      description: "Explore basic IoT concepts and real-world applications using beginner-friendly tools and sensors.",
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW90fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
-      duration: "12 weeks",
-      level: "Beginner",
-      skills: ["Sensors", "Basic Circuits", "Problem Solving", "LED Projects"]
+      description: "Students begin their technology journey by exploring the fundamentals of IoT, understanding how everyday objects can connect and communicate.",
+      color: "bg-blue-500",
+      duration: "12 weeks (2h/week)",
+      icon: <Book className="h-5 w-5" />,
+      skills: [
+        "Basic electronics and circuit concepts",
+        "Introduction to sensors and data collection",
+        "Simple programming with block-based interfaces"
+      ]
     },
     {
-      title: "IoT & Robotics Basics",
+      title: "Basics of IoT + Introduction to Robotics",
       grade: "7th Grade",
-      description: "Build on IoT knowledge and explore fundamental robotics concepts like sensors, actuators, and automation.",
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9ib3RpY3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "14 weeks",
-      level: "Intermediate",
-      skills: ["Actuators", "Motor Control", "Simple Automation", "Coding Basics"]
+      description: "Building on their IoT foundation, students explore the exciting world of robotics, learning how to create simple automated systems.",
+      color: "bg-teal-500",
+      duration: "14 weeks (2h/week)",
+      icon: <Book className="h-5 w-5" />,
+      skills: [
+        "Advanced sensors and actuators",
+        "Introduction to microcontrollers",
+        "Basic robotics concepts and movement"
+      ]
     },
     {
-      title: "IoT, Robotics & 3D Printing",
+      title: "IoT + Robotics + Introduction to 3D Printing",
       grade: "8th Grade",
-      description: "Combine skills to design functional prototypes and learn the basics of 3D modeling and printing.",
-      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "16 weeks",
-      level: "Intermediate",
-      skills: ["3D Modeling", "Prototyping", "Integration", "Design Thinking"]
+      description: "Students advance their skills by combining IoT and robotics knowledge while learning to design and create physical objects through 3D printing.",
+      color: "bg-purple-500",
+      duration: "14 weeks (2h/week)",
+      icon: <Book className="h-5 w-5" />,
+      skills: [
+        "Intermediate programming concepts",
+        "Basics of 3D modeling and design",
+        "Creating functional prototypes"
+      ]
     },
     {
-      title: "Product Design & Development",
+      title: "IoT + Robotics + 3D Printing + Product Design",
       grade: "9th Grade",
-      description: "Engage in project-based learning focusing on innovation, prototyping, and real-world product development.",
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3QlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "16 weeks",
-      level: "Advanced",
-      skills: ["Innovation", "Project Management", "User Testing", "Full Prototype"]
+      description: "Students culminate their learning journey by engaging in complete product development cycles, from ideation to functional prototypes.",
+      color: "bg-orange-500",
+      duration: "16 weeks (2h/week)",
+      icon: <Book className="h-5 w-5" />,
+      skills: [
+        "Product design methodology",
+        "Advanced prototyping techniques",
+        "Project management fundamentals"
+      ]
     }
   ];
 
@@ -171,10 +183,10 @@ const ProgramsSection = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <h2 className="section-title appear-animation mb-3 md:mb-0 text-left" ref={sectionRef}>
-              STEM <span className="text-slash-teal">Training Programs</span>
+              Technology Training for <span className="text-slash-teal">Grades 6-9</span>
             </h2>
             <p className="text-slate-600 max-w-2xl">
-              Comprehensive 2-hour weekly sessions with hands-on learning and mentorship for students in grades 6-9
+              Progressive, hands-on technology education with 2-hour weekly sessions and expert mentorship
             </p>
           </div>
           <Button 
@@ -192,12 +204,12 @@ const ProgramsSection = () => {
               key={index}
               title={program.title}
               description={program.description}
-              image={program.image}
+              color={program.color}
               index={index}
               grade={program.grade}
               duration={program.duration}
-              level={program.level}
               skills={program.skills}
+              icon={program.icon}
             />
           ))}
         </div>
@@ -208,7 +220,7 @@ const ProgramsSection = () => {
             style={{ animationDelay: '600ms' }}
             onClick={() => navigate('/programs')}
           >
-            Explore All Programs
+            Explore Full Curriculum
           </Button>
         </div>
       </div>

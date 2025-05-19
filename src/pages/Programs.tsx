@@ -4,19 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { 
-  ArrowRight, 
-  CalendarDays, 
-  Clock, 
-  GraduationCap, 
-  BookOpen, 
-  Users, 
-  CheckCircle2,
-  Rocket,
-  Monitor,
-  Wrench,
-  Terminal
-} from "lucide-react";
+import { ArrowRight, Clock, Users, Calendar, Book, Award, CheckCircle2, Rocket, Download, Lightbulb } from "lucide-react";
 
 const Programs = () => {
   // Scroll to top when page loads
@@ -24,438 +12,327 @@ const Programs = () => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5
-      }
-    }
-  };
-
-  const programs = [
-    {
-      title: "Introduction to Internet of Things (IoT)",
-      grade: "6th Grade",
-      level: "Beginner",
-      description: "Students focus on understanding basic IoT concepts and real-world applications using beginner-friendly tools and sensors. They'll learn to connect simple devices and create basic automation.",
-      duration: "12 Weeks",
-      sessions: "24 Sessions (2h/week)",
-      nextBatch: "June 15, 2025",
-      features: ["Hands-on Projects", "Take-Home Kit", "Group Challenges", "End-of-Course Showcase"],
-      skills: ["Basic Electronics", "Simple Sensors", "LED Control", "Simple Programming"],
-      projects: ["Smart LED Light System", "Temperature Monitoring", "Simple Automation"],
-      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW90fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "IoT & Introduction to Robotics",
-      grade: "7th Grade",
-      level: "Beginner to Intermediate",
-      description: "Building on IoT knowledge, students explore fundamental robotics concepts including sensors, actuators, and simple automation. They'll create devices that can sense and interact with their environment.",
-      duration: "14 Weeks",
-      sessions: "28 Sessions (2h/week)",
-      nextBatch: "July 5, 2025",
-      features: ["Advanced Components", "Robotics Kits", "Team Projects", "Mini Competitions"],
-      skills: ["Motor Control", "Actuators", "Simple Robotics", "Block Programming"],
-      projects: ["Obstacle Avoiding Robot", "Remote Controlled Device", "Automated Plant Watering System"],
-      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9ib3RpY3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "IoT, Robotics & 3D Printing",
-      grade: "8th Grade",
-      level: "Intermediate",
-      description: "Students combine their skills to design functional prototypes and learn the basics of 3D modeling and printing. This program integrates multiple technologies to create more complex and innovative solutions.",
-      duration: "16 Weeks",
-      sessions: "32 Sessions (2h/week)",
-      nextBatch: "August 10, 2025",
-      features: ["3D Printing Access", "Advanced Components", "Design Software", "Engineering Principles"],
-      skills: ["3D Modeling", "CAD Design", "Integration", "Text-based Programming"],
-      projects: ["Custom Robot Parts", "Smart Home Model", "Interactive Prototype"],
-      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "Product Design & Development",
-      grade: "9th Grade",
-      level: "Advanced",
-      description: "Engage in integrated project-based learning focusing on innovation, prototyping, and real-world product development cycles. Students work on end-to-end projects with industry-standard methodologies.",
-      duration: "16 Weeks",
-      sessions: "32 Sessions (2h/week)",
-      nextBatch: "June 1, 2025",
-      features: ["Portfolio Development", "Mentorship", "Industry Feedback", "Innovation Showcase"],
-      skills: ["Project Management", "User Testing", "Advanced Programming", "Problem-Solving"],
-      projects: ["Full Product Prototype", "Market Analysis", "Presentation to Industry Experts"],
-      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3QlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-    }
-  ];
-
-  const upcomingWorkshops = [
-    {
-      title: "Introduction to Arduino",
-      date: "May 25, 2025",
-      time: "10:00 AM - 1:00 PM",
-      instructor: "Dr. James Miller",
-      price: "Free",
-      spots: "Limited to 20 participants",
-      grade: "5th-7th Grade"
-    },
-    {
-      title: "3D Design Fundamentals",
-      date: "June 5, 2025",
-      time: "2:00 PM - 5:00 PM",
-      instructor: "Emily Zhang",
-      price: "$49",
-      spots: "15 spots left",
-      grade: "6th-9th Grade"
-    },
-    {
-      title: "Robotics Challenge Day",
-      date: "June 12, 2025",
-      time: "9:00 AM - 4:00 PM",
-      instructor: "Alex Rivera",
-      price: "$79",
-      spots: "10 spots left",
-      grade: "7th-9th Grade"
-    }
-  ];
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slate-900 via-slash-blue to-slate-800 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-pattern opacity-10"></div>
-          <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-slash-teal/20 to-transparent"></div>
-          <div className="section-container relative z-10 pt-20 pb-24">
+        <section className="bg-gradient-to-br from-blue-50 to-blue-100 py-20 lg:py-32">
+          <div className="section-container text-center">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
-              className="max-w-3xl"
+              className="max-w-4xl mx-auto"
             >
               <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                STEM Education Programs
+                School Program
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Building Future <br />
-                <span className="text-slash-teal">Innovators & Problem Solvers</span>
+                Technology Training for{" "}
+                <span className="bg-gradient-to-r from-blue-600 to-slash-teal bg-clip-text text-transparent">
+                  Grades 6-9
+                </span>
               </h1>
-              <p className="text-xl text-white/80 mb-8 max-w-2xl">
-                Our grade-specific training programs provide students with the skills and knowledge to thrive in the digital world through hands-on learning and mentorship.
+              <p className="text-xl text-slate-600 mb-10 max-w-3xl mx-auto">
+                Empowering young minds with hands-on technology education through progressive, age-appropriate curriculum
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-wrap gap-4 justify-center">
                 <Button 
-                  className="bg-slash-teal hover:bg-slash-teal/90 text-white py-6 px-8 text-lg rounded-lg shadow-lg shadow-slash-teal/20 flex items-center gap-2"
-                  onClick={() => window.open("https://calendly.com", "_blank")}
+                  className="bg-gradient-to-r from-blue-600 to-slash-teal hover:opacity-90 text-white py-6 px-8 text-lg rounded-lg shadow-lg shadow-slash-teal/20"
                 >
-                  Schedule a Free Consultation
-                  <ArrowRight className="h-5 w-5" />
+                  Enroll Your School
                 </Button>
                 <Button 
                   variant="outline" 
-                  className="border-white/30 text-white hover:bg-white/10 py-6 px-8 rounded-lg text-lg"
-                  onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="border-slate-300 text-slate-700 hover:bg-slate-50 py-6 px-8 rounded-lg text-lg flex items-center gap-2"
                 >
-                  Explore Programs
+                  <Download className="h-5 w-5" />
+                  Download Curriculum
                 </Button>
               </div>
             </motion.div>
           </div>
-
-          {/* Wave divider */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 120" className="w-full h-auto">
-              <path 
-                fill="#ffffff" 
-                fillOpacity="1" 
-                d="M0,64L60,69.3C120,75,240,85,360,80C480,75,600,53,720,42.7C840,32,960,32,1080,42.7C1200,53,1320,75,1380,85.3L1440,96L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-              ></path>
-            </svg>
-          </div>
         </section>
 
-        {/* Program Overview */}
-        <section className="py-16 bg-white">
+        {/* Program Structure */}
+        <section className="py-20 bg-white" id="program-structure">
           <div className="section-container">
-            <div className="text-center mb-12">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-              >
-                <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                  Program Structure
-                </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-6">
-                  Training Program Structure
-                </h2>
-                <p className="text-slate-600 max-w-3xl mx-auto">
-                  Our comprehensive training programs are designed for students in grades 6-9, featuring 2 hours of weekly instruction over 12-16 weeks with hands-on mentorship from industry experts.
-                </p>
-              </motion.div>
+            <div className="text-center mb-16">
+              <span className="inline-block text-indigo-500 bg-indigo-50 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                Program Structure
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Comprehensive Learning Journey
+              </h2>
+              <p className="text-slate-600 max-w-3xl mx-auto">
+                Our grade-specific curriculum builds progressive technology skills through hands-on, project-based learning
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
               {[
                 {
-                  icon: <Monitor className="h-8 w-8 text-slash-teal" />,
-                  title: "2-Hour Weekly Sessions",
-                  description: "Focused learning sessions designed to maximize engagement and retention"
+                  icon: <Clock className="h-8 w-8 text-blue-600" />,
+                  title: "2 Hours Weekly",
+                  description: "Focused sessions designed to fit into school schedules"
                 },
                 {
-                  icon: <CalendarDays className="h-8 w-8 text-slash-teal" />,
-                  title: "12-16 Week Programs",
-                  description: "Comprehensive curriculum with progression through grade levels"
+                  icon: <Calendar className="h-8 w-8 text-blue-600" />,
+                  title: "12-16 Weeks",
+                  description: "Comprehensive program that spans one academic term"
                 },
                 {
-                  icon: <Users className="h-8 w-8 text-slash-teal" />,
-                  title: "Small Class Sizes",
-                  description: "Maximum 15 students per class for personalized attention"
+                  icon: <Users className="h-8 w-8 text-blue-600" />,
+                  title: "Expert Mentors",
+                  description: "Hands-on guidance from industry professionals"
                 },
                 {
-                  icon: <Rocket className="h-8 w-8 text-slash-teal" />,
-                  title: "Project-Based Learning",
-                  description: "Hands-on projects that build real-world skills and portfolios"
+                  icon: <Award className="h-8 w-8 text-blue-600" />,
+                  title: "Project Showcase",
+                  description: "Culminates in a student innovation exhibition"
                 }
               ].map((item, index) => (
                 <motion.div 
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ delay: index * 0.1, duration: 0.5 }}
                   className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center"
                 >
-                  <div className="mb-4 mx-auto bg-slash-teal/10 p-3 rounded-full w-16 h-16 flex items-center justify-center">
+                  <div className="mb-4 mx-auto bg-blue-50 p-3 rounded-full w-16 h-16 flex items-center justify-center">
                     {item.icon}
                   </div>
-                  <h3 className="text-xl font-semibold text-slash-blue mb-2">{item.title}</h3>
+                  <h3 className="text-xl font-semibold text-slate-800 mb-2">{item.title}</h3>
                   <p className="text-slate-600">{item.description}</p>
                 </motion.div>
               ))}
             </div>
-
-            <motion.div 
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.3 }}
-              className="bg-slash-lightGray p-8 rounded-2xl border border-slate-200"
-            >
-              <h3 className="text-2xl font-bold text-slash-blue mb-6 text-center">Grade-Based Progression</h3>
-              <div className="space-y-6">
-                {[
-                  {
-                    grade: "6th Grade",
-                    title: "Introduction to Internet of Things (IoT)",
-                    description: "Focus on understanding basic IoT concepts and real-world applications using beginner-friendly tools and sensors."
-                  },
-                  {
-                    grade: "7th Grade",
-                    title: "Basics of IoT + Introduction to Robotics",
-                    description: "Build on IoT knowledge and explore fundamental robotics concepts like sensors, actuators, and simple automation."
-                  },
-                  {
-                    grade: "8th Grade",
-                    title: "IoT + Robotics (Intermediate) + Introduction to 3D Printing",
-                    description: "Combine skills from previous grades to design functional prototypes, and learn the basics of 3D modeling and printing."
-                  },
-                  {
-                    grade: "9th Grade",
-                    title: "IoT + Robotics + 3D Printing + Product Design & Development",
-                    description: "Engage in integrated project-based learning focusing on innovation, prototyping, and real-world product development cycles."
-                  }
-                ].map((item, index) => (
-                  <div key={index} className="flex flex-col md:flex-row p-4 bg-white rounded-xl shadow-sm gap-4 border border-slate-100">
-                    <div className="md:w-1/6 flex items-center justify-center">
-                      <span className="bg-slash-blue text-white text-lg font-bold py-2 px-4 rounded-lg">
-                        {item.grade}
-                      </span>
-                    </div>
-                    <div className="md:w-5/6">
-                      <h4 className="text-lg font-semibold text-slash-blue mb-2">{item.title}</h4>
-                      <p className="text-slate-600">{item.description}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </div>
         </section>
 
-        {/* Programs Grid */}
-        <section id="programs" className="py-20 bg-white">
+        {/* Progressive Learning Path */}
+        <section className="py-20 bg-slate-50" id="curriculum">
           <div className="section-container">
             <div className="text-center mb-16">
-              <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Our Programs
+              <span className="inline-block text-green-500 bg-green-50 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                Grade-Specific Curriculum
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-4">
-                Comprehensive Training Programs
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Progressive Learning Path
               </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Explore our grade-specific training programs designed to build foundational skills in technology, engineering, and innovation
+              <p className="text-slate-600 max-w-3xl mx-auto">
+                Our curriculum builds on previous knowledge, introducing new concepts as students advance through grades
               </p>
             </div>
 
-            <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 gap-8"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-            >
-              {programs.map((program, index) => (
-                <motion.div 
-                  key={index} 
-                  variants={itemVariants}
-                  className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
-                >
-                  <div className="md:flex">
-                    <div className="md:w-2/5 h-64 md:h-auto relative overflow-hidden">
-                      <img 
-                        src={program.image} 
-                        alt={program.title} 
-                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                      />
-                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slash-teal px-3 py-1 rounded-full text-sm font-medium">
-                        {program.grade}
-                      </div>
+            {/* Grade 6 */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md"
+              >
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-2/5 bg-blue-500 p-12 text-white flex flex-col justify-center">
+                    <div className="mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                      <Book className="h-8 w-8" />
                     </div>
-                    
-                    <div className="p-6 md:w-3/5">
-                      <div className="mb-4">
-                        <span className="text-sm text-slate-500 mb-2 flex items-center">
-                          <GraduationCap className="h-4 w-4 mr-1" />
-                          {program.level}
-                        </span>
-                        <h3 className="text-xl font-bold text-slash-blue mb-2">
-                          {program.title}
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                          {program.description}
-                        </p>
+                    <h3 className="text-3xl font-bold mb-2">6th Grade</h3>
+                    <h4 className="text-xl font-medium mb-6">Introduction to Internet of Things (IoT)</h4>
+                    <p className="text-white/90">
+                      Students begin their technology journey by exploring the fundamentals of IoT, understanding how everyday objects can connect and communicate.
+                    </p>
+                  </div>
+                  
+                  <div className="lg:w-3/5 p-8 lg:p-12">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6">What Students Will Learn</h3>
+                    <ul className="space-y-4">
+                      {[
+                        "Basic electronics and circuit concepts",
+                        "Introduction to sensors and data collection",
+                        "Simple programming with block-based interfaces",
+                        "Creating basic IoT projects with beginner-friendly tools",
+                        "Understanding real-world IoT applications",
+                        "Problem-solving through technology"
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-3 shrink-0" />
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex items-center justify-between">
+                      <div className="flex items-center text-blue-600">
+                        <Book className="h-5 w-5 mr-2" />
+                        <span className="font-medium">12 Weeks Program</span>
                       </div>
-                      
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-5">
-                        <div className="flex items-center text-slate-600">
-                          <Clock className="h-4 w-4 mr-2 text-slash-teal" />
-                          {program.duration}
-                        </div>
-                        <div className="flex items-center text-slate-600">
-                          <BookOpen className="h-4 w-4 mr-2 text-slash-teal" />
-                          {program.sessions}
-                        </div>
-                        <div className="flex items-center text-slate-600 col-span-2">
-                          <CalendarDays className="h-4 w-4 mr-2 text-slash-teal" />
-                          Next Batch: {program.nextBatch}
-                        </div>
-                      </div>
-                      
-                      <div className="mb-4">
-                        <h4 className="text-sm font-semibold text-slash-blue mb-2">Key Projects:</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {program.projects.map((project, i) => (
-                            <span 
-                              key={i} 
-                              className="inline-flex items-center text-xs bg-slash-teal/10 text-slate-700 px-2 py-1 rounded-full"
-                            >
-                              <CheckCircle2 className="h-3 w-3 mr-1 text-slash-teal" />
-                              {project}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                      
-                      <div className="mt-auto">
-                        <Button 
-                          className="w-full bg-slash-blue hover:bg-slash-blue/90 text-white"
-                          onClick={() => window.open("https://calendly.com", "_blank")}
-                        >
-                          Enroll Now
-                        </Button>
-                      </div>
+                      <Button variant="ghost" className="text-blue-600">
+                        View Sample Projects <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
                     </div>
                   </div>
-                </motion.div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
-
-        {/* Upcoming Workshops */}
-        <section className="py-16 bg-slash-lightGray">
-          <div className="section-container">
-            <div className="text-center mb-12">
-              <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Limited Seats
-              </span>
-              <h2 className="text-3xl font-bold text-slash-blue mb-4">
-                Upcoming Workshops
-              </h2>
-              <p className="text-slate-600 max-w-2xl mx-auto">
-                Join our specialized workshops to get hands-on training and insights from industry experts
-              </p>
+                </div>
+              </motion.div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {upcomingWorkshops.map((workshop, index) => (
-                <motion.div 
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.5 }}
-                  className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100"
-                >
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-3">
-                      <h3 className="text-lg font-semibold text-slash-blue">{workshop.title}</h3>
-                      <span className="text-xs font-medium bg-slash-teal/10 text-slash-teal px-2 py-1 rounded-full">
-                        {workshop.grade}
-                      </span>
+            {/* Grade 7 */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md"
+              >
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-2/5 bg-teal-500 p-12 text-white flex flex-col justify-center">
+                    <div className="mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                      <Rocket className="h-8 w-8" />
                     </div>
-                    
-                    <div className="space-y-2 mb-4">
-                      <div className="flex items-center text-sm text-slate-600">
-                        <CalendarDays className="h-4 w-4 mr-2 text-slash-teal" />
-                        {workshop.date}
-                      </div>
-                      
-                      <div className="flex items-center text-sm text-slate-600">
-                        <Clock className="h-4 w-4 mr-2 text-slash-teal" />
-                        {workshop.time}
-                      </div>
-                      
-                      <div className="flex items-center text-sm text-slate-600">
-                        <Users className="h-4 w-4 mr-2 text-slash-teal" />
-                        {workshop.instructor}
-                      </div>
-                    </div>
-                    
-                    <div className="flex justify-between items-center mb-4">
-                      <span className="font-medium text-slash-blue">{workshop.price}</span>
-                      <span className="text-sm text-slate-500">{workshop.spots}</span>
-                    </div>
-                    
-                    <Button 
-                      className="w-full bg-slash-teal hover:bg-slash-teal/90 text-white"
-                      onClick={() => window.open("https://calendly.com", "_blank")}
-                    >
-                      Register Now
-                    </Button>
+                    <h3 className="text-3xl font-bold mb-2">7th Grade</h3>
+                    <h4 className="text-xl font-medium mb-6">Basics of IoT + Introduction to Robotics</h4>
+                    <p className="text-white/90">
+                      Building on their IoT foundation, students explore the exciting world of robotics, learning how to create simple automated systems.
+                    </p>
                   </div>
-                </motion.div>
-              ))}
+                  
+                  <div className="lg:w-3/5 p-8 lg:p-12">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6">What Students Will Learn</h3>
+                    <ul className="space-y-4">
+                      {[
+                        "Advanced sensors and actuators",
+                        "Introduction to microcontrollers",
+                        "Basic robotics concepts and movement",
+                        "Simple automation projects",
+                        "Combining IoT and robotics for smart solutions",
+                        "Collaborative problem-solving"
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-3 shrink-0" />
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex items-center justify-between">
+                      <div className="flex items-center text-teal-600">
+                        <Book className="h-5 w-5 mr-2" />
+                        <span className="font-medium">14 Weeks Program</span>
+                      </div>
+                      <Button variant="ghost" className="text-teal-600">
+                        View Sample Projects <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Grade 8 */}
+            <div className="mb-16">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md"
+              >
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-2/5 bg-purple-500 p-12 text-white flex flex-col justify-center">
+                    <div className="mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                      <Rocket className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2">8th Grade</h3>
+                    <h4 className="text-xl font-medium mb-6">IoT + Robotics (Intermediate) + Introduction to 3D Printing</h4>
+                    <p className="text-white/90">
+                      Students advance their skills by combining IoT and robotics knowledge while learning to design and create physical objects through 3D printing.
+                    </p>
+                  </div>
+                  
+                  <div className="lg:w-3/5 p-8 lg:p-12">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6">What Students Will Learn</h3>
+                    <ul className="space-y-4">
+                      {[
+                        "Intermediate programming concepts",
+                        "Advanced robotics mechanisms",
+                        "Basics of 3D modeling and design",
+                        "3D printing fundamentals and techniques",
+                        "Creating functional prototypes",
+                        "Integrating IoT, robotics, and 3D printing"
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-3 shrink-0" />
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex items-center justify-between">
+                      <div className="flex items-center text-purple-600">
+                        <Book className="h-5 w-5 mr-2" />
+                        <span className="font-medium">14 Weeks Program</span>
+                      </div>
+                      <Button variant="ghost" className="text-purple-600">
+                        View Sample Projects <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Grade 9 */}
+            <div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-md"
+              >
+                <div className="flex flex-col lg:flex-row">
+                  <div className="lg:w-2/5 bg-orange-500 p-12 text-white flex flex-col justify-center">
+                    <div className="mb-4 w-16 h-16 bg-white/20 rounded-full flex items-center justify-center">
+                      <Lightbulb className="h-8 w-8" />
+                    </div>
+                    <h3 className="text-3xl font-bold mb-2">9th Grade</h3>
+                    <h4 className="text-xl font-medium mb-6">IoT + Robotics + 3D Printing + Product Design & Development</h4>
+                    <p className="text-white/90">
+                      Students culminate their learning journey by engaging in complete product development cycles, from ideation to functional prototypes.
+                    </p>
+                  </div>
+                  
+                  <div className="lg:w-3/5 p-8 lg:p-12">
+                    <h3 className="text-xl font-bold text-slate-800 mb-6">What Students Will Learn</h3>
+                    <ul className="space-y-4">
+                      {[
+                        "Product design methodology",
+                        "User-centered design principles",
+                        "Advanced prototyping techniques",
+                        "Project management fundamentals",
+                        "Real-world problem-solving",
+                        "Presentation and documentation skills"
+                      ].map((item, index) => (
+                        <li key={index} className="flex items-start">
+                          <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5 mr-3 shrink-0" />
+                          <span className="text-slate-700">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <div className="mt-8 flex items-center justify-between">
+                      <div className="flex items-center text-orange-600">
+                        <Book className="h-5 w-5 mr-2" />
+                        <span className="font-medium">16 Weeks Program</span>
+                      </div>
+                      <Button variant="ghost" className="text-orange-600">
+                        View Sample Projects <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </section>
@@ -463,108 +340,148 @@ const Programs = () => {
         {/* Learning Approach */}
         <section className="py-20 bg-white">
           <div className="section-container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
+            <div className="text-center mb-16">
+              <span className="inline-block text-orange-500 bg-orange-50 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                Our Methodology
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Hands-on Learning Approach
+              </h2>
+              <p className="text-slate-600 max-w-3xl mx-auto">
+                Our teaching methodology focuses on practical experience, creative problem-solving, and collaborative learning
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  title: "Project-Based Learning",
+                  description: "Students learn by doing, working on real projects that solve actual problems. This approach helps them develop critical thinking and practical skills while seeing the real-world impact of their work."
+                },
+                {
+                  title: "Collaborative Teams",
+                  description: "Students work in small teams, learning to communicate effectively, share responsibilities, and combine their strengths. This mirrors real-world technology development environments."
+                },
+                {
+                  title: "Expert Mentorship",
+                  description: "Our industry-experienced mentors guide students through challenges, providing insights and feedback. This mentorship model helps students develop both technical skills and professional approaches."
+                }
+              ].map((item, index) => (
                 <motion.div
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.7 }}
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="bg-white p-8 rounded-xl shadow-sm border border-slate-100"
                 >
-                  <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                    Our Learning Approach
-                  </span>
-                  <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-6">
-                    Building <span className="text-slash-teal">Future-Ready Skills</span>
-                  </h2>
-                  <p className="text-slate-600 mb-8">
-                    Our training programs focus on project-based learning that builds technical skills while fostering creativity, problem-solving, and collaboration – essential skills for the future workforce.
-                  </p>
-                  
-                  <div className="space-y-4">
-                    {[
-                      {
-                        title: "Hands-on Learning",
-                        description: "Students spend 80% of their time building real projects"
-                      },
-                      {
-                        title: "Expert Mentorship",
-                        description: "Learn from industry professionals with real-world experience"
-                      },
-                      {
-                        title: "Progressive Curriculum",
-                        description: "Each grade builds on previous knowledge with increasing complexity"
-                      },
-                      {
-                        title: "Portfolio Development",
-                        description: "Students create tangible projects to showcase their skills"
-                      }
-                    ].map((item, index) => (
-                      <div key={index} className="flex">
-                        <div className="h-10 w-10 rounded-full bg-slash-teal/10 text-slash-teal flex items-center justify-center mr-4 shrink-0">
-                          <CheckCircle2 className="h-5 w-5" />
-                        </div>
-                        <div>
-                          <h3 className="text-lg font-medium text-slash-blue mb-1">{item.title}</h3>
-                          <p className="text-slate-600">{item.description}</p>
-                        </div>
-                      </div>
-                    ))}
+                  <h3 className="text-xl font-bold text-slate-800 mb-4">{item.title}</h3>
+                  <p className="text-slate-600">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Sample Projects */}
+        <section className="py-20 bg-slate-50">
+          <div className="section-container">
+            <div className="text-center mb-16">
+              <span className="inline-block text-blue-500 bg-blue-50 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                Student Innovations
+              </span>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+                Sample Student Projects
+              </h2>
+              <p className="text-slate-600 max-w-3xl mx-auto">
+                See what students can create through our progressive curriculum
+              </p>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {
+                  grade: "6th Grade",
+                  title: "Smart Plant Monitor",
+                  description: "An IoT device that monitors soil moisture and sunlight, alerting when plants need attention."
+                },
+                {
+                  grade: "7th Grade",
+                  title: "Automated Sorting Robot",
+                  description: "A robot that can identify and sort different colored objects using sensors and simple mechanics."
+                },
+                {
+                  grade: "8th Grade",
+                  title: "Weather Station with 3D Printed Housing",
+                  description: "A weather monitoring system with custom-designed 3D printed enclosure for outdoor durability."
+                },
+                {
+                  grade: "8th Grade",
+                  title: "Interactive Smart Mirror",
+                  description: "A reflective display that shows time, weather, and personalized information using embedded electronics."
+                },
+                {
+                  grade: "9th Grade",
+                  title: "Assistive Device for Visually Impaired",
+                  description: "A wearable tool that uses sensors to detect obstacles and provide haptic feedback to users."
+                },
+                {
+                  grade: "9th Grade",
+                  title: "Sustainable Energy Monitor",
+                  description: "A system that tracks and visualizes energy usage, promoting conservation through real-time feedback."
+                }
+              ].map((project, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="bg-white rounded-xl overflow-hidden shadow-sm"
+                >
+                  <div className="h-48 bg-slate-200 flex items-center justify-center">
+                    <img src="/placeholder.svg" alt="Project image" className="w-16 h-16 opacity-30" />
+                  </div>
+                  <div className="p-6">
+                    <span className="inline-block text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full mb-3">
+                      {project.grade}
+                    </span>
+                    <h3 className="text-lg font-bold text-slate-800 mb-2">{project.title}</h3>
+                    <p className="text-slate-600 text-sm">{project.description}</p>
                   </div>
                 </motion.div>
-              </div>
-              
-              <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.7 }}
-                className="relative"
-              >
-                <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHMlMjB0ZWNobm9sb2d5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" 
-                    alt="Students Learning Robotics" 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs hidden md:block">
-                  <div className="flex items-start">
-                    <div className="text-4xl font-bold text-slash-teal mr-3">94%</div>
-                    <p className="text-sm text-slate-600">of our students continue with STEM subjects in high school and beyond</p>
-                  </div>
-                </div>
-              </motion.div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* Call to action */}
-        <section className="py-16 bg-gradient-to-br from-slash-blue to-slate-900 text-white relative overflow-hidden">
-          <div className="absolute inset-0 bg-pattern opacity-10"></div>
-          <div className="section-container relative z-10">
+        <section className="py-16 bg-gradient-to-r from-blue-600 to-slate-900 text-white">
+          <div className="section-container">
             <div className="max-w-3xl mx-auto text-center">
               <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7 }}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Enroll Your Child?</h2>
-                <p className="text-lg text-white/80 mb-8">
-                  Get in touch with our education team to learn more about our programs, discuss your child's interests, and find the perfect fit for their learning journey.
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Technology Education?</h2>
+                <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
+                  Join schools across the country implementing our progressive technology curriculum
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button 
-                    className="bg-slash-teal hover:bg-slash-teal/90 text-white py-6 px-8 text-lg rounded-lg shadow-lg shadow-slash-teal/20 flex items-center gap-2"
+                    className="bg-white text-blue-600 hover:bg-white/90 py-6 px-8 text-lg rounded-lg shadow-lg"
                     onClick={() => window.open("https://calendly.com", "_blank")}
                   >
-                    Schedule a Free Consultation
-                    <ArrowRight className="h-5 w-5" />
+                    Schedule a Consultation
                   </Button>
                   <Button 
                     variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 py-6 px-8 text-lg rounded-lg"
-                    onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
+                    className="border-white/30 text-white hover:bg-white/10 py-6 px-8 text-lg rounded-lg flex items-center gap-2"
                   >
-                    View All Programs
+                    <Download className="h-5 w-5" />
+                    Download Information Packet
                   </Button>
                 </div>
               </motion.div>
