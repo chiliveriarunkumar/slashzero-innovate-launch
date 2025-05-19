@@ -77,7 +77,7 @@ const ProgramCard = ({
           <ul className="space-y-2">
             {skills.slice(0, 3).map((skill, i) => (
               <li key={i} className="flex items-start">
-                <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 mr-2 shrink-0" />
+                <CheckCircle2 className="h-4 w-4 text-slash-green mt-0.5 mr-2 shrink-0" />
                 <span className="text-sm text-slate-600">{skill}</span>
               </li>
             ))}
@@ -86,7 +86,7 @@ const ProgramCard = ({
         
         <Button 
           variant="ghost" 
-          className="text-slate-700 hover:text-slate-900 hover:bg-slate-100 flex items-center p-0"
+          className="text-slash-blue hover:text-slash-blue/80 hover:bg-slate-100 flex items-center p-0"
           onClick={() => navigate('/programs')}
         >
           Learn More <ArrowRight className="ml-2 h-4 w-4" />
@@ -127,7 +127,7 @@ const ProgramsSection = () => {
       title: "Introduction to Internet of Things (IoT)",
       grade: "6th Grade",
       description: "Students begin their technology journey by exploring the fundamentals of IoT, understanding how everyday objects can connect and communicate.",
-      color: "bg-blue-500",
+      color: "bg-slash-blue",
       duration: "12 weeks (2h/week)",
       icon: <Book className="h-5 w-5" />,
       skills: [
@@ -140,7 +140,7 @@ const ProgramsSection = () => {
       title: "Basics of IoT + Introduction to Robotics",
       grade: "7th Grade",
       description: "Building on their IoT foundation, students explore the exciting world of robotics, learning how to create simple automated systems.",
-      color: "bg-teal-500",
+      color: "bg-slash-green",
       duration: "14 weeks (2h/week)",
       icon: <Book className="h-5 w-5" />,
       skills: [
@@ -153,7 +153,7 @@ const ProgramsSection = () => {
       title: "IoT + Robotics + Introduction to 3D Printing",
       grade: "8th Grade",
       description: "Students advance their skills by combining IoT and robotics knowledge while learning to design and create physical objects through 3D printing.",
-      color: "bg-purple-500",
+      color: "bg-slash-purple",
       duration: "14 weeks (2h/week)",
       icon: <Book className="h-5 w-5" />,
       skills: [
@@ -166,7 +166,7 @@ const ProgramsSection = () => {
       title: "IoT + Robotics + 3D Printing + Product Design",
       grade: "9th Grade",
       description: "Students culminate their learning journey by engaging in complete product development cycles, from ideation to functional prototypes.",
-      color: "bg-orange-500",
+      color: "bg-slash-red",
       duration: "16 weeks (2h/week)",
       icon: <Book className="h-5 w-5" />,
       skills: [
@@ -183,7 +183,7 @@ const ProgramsSection = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <h2 className="section-title appear-animation mb-3 md:mb-0 text-left" ref={sectionRef}>
-              Technology Training for <span className="text-slash-teal">Grades 6-9</span>
+              Technology Training for <span className="text-slash-green">Grades 6-9</span>
             </h2>
             <p className="text-slate-600 max-w-2xl">
               Progressive, hands-on technology education with 2-hour weekly sessions and expert mentorship
@@ -191,7 +191,7 @@ const ProgramsSection = () => {
           </div>
           <Button 
             variant="ghost"
-            className="text-slash-teal hover:text-slash-blue flex items-center mt-4 md:mt-0"
+            className="text-slash-blue hover:text-slash-green flex items-center mt-4 md:mt-0"
             onClick={() => navigate('/programs')}
           >
             View All Programs <ArrowRight className="ml-2 h-4 w-4" />

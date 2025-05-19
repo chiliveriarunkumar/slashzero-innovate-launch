@@ -1,14 +1,15 @@
 
-import { Check } from "lucide-react";
+import { Graduation, Rocket, Award, Users, Lightbulb } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 interface WhyItemProps {
   title: string;
   description: string;
   index: number;
+  icon: React.ReactNode;
 }
 
-const WhyItem = ({ title, description, index }: WhyItemProps) => {
+const WhyItem = ({ title, description, index, icon }: WhyItemProps) => {
   const itemRef = useRef<HTMLDivElement>(null);
   
   useEffect(() => {
@@ -40,8 +41,8 @@ const WhyItem = ({ title, description, index }: WhyItemProps) => {
       ref={itemRef}
     >
       <div className="mr-4 mt-1">
-        <div className="w-8 h-8 rounded-full bg-gradient-to-r from-slash-blue to-slash-teal flex items-center justify-center text-white">
-          <Check className="h-5 w-5" />
+        <div className="w-10 h-10 rounded-full bg-gradient-to-r from-slash-blue to-slash-green flex items-center justify-center text-white">
+          {icon}
         </div>
       </div>
       <div>
@@ -59,22 +60,27 @@ const WhySection = () => {
     {
       title: "Industry-Aligned Training",
       description: "Our programs are designed in collaboration with industry leaders to ensure skills that are relevant and in-demand.",
+      icon: <Graduation className="h-5 w-5" />
     },
     {
       title: "Expert Mentors",
       description: "Learn from professionals with extensive real-world experience in their respective technology domains.",
+      icon: <Users className="h-5 w-5" />
     },
     {
       title: "Project-Based Learning",
       description: "Apply concepts through hands-on projects that simulate real-world challenges and build a practical portfolio.",
+      icon: <Lightbulb className="h-5 w-5" />
     },
     {
       title: "Flexible & Scalable Programs",
       description: "Customizable learning paths tailored to individual needs, from beginners to advanced practitioners.",
+      icon: <Rocket className="h-5 w-5" />
     },
     {
       title: "Continuous Career Development",
       description: "Ongoing support through career guidance, industry connections, and advanced skill development.",
+      icon: <Award className="h-5 w-5" />
     },
   ];
 
@@ -104,7 +110,7 @@ const WhySection = () => {
     <section className="py-20 bg-slash-lightGray">
       <div className="section-container">
         <h2 className="section-title appear-animation" ref={sectionRef}>
-          Why <span className="text-slash-teal">SlashZero</span>?
+          Why <span className="text-slash-green">SlashZero</span>?
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -114,6 +120,7 @@ const WhySection = () => {
               title={item.title}
               description={item.description}
               index={index}
+              icon={item.icon}
             />
           ))}
         </div>

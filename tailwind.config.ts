@@ -64,10 +64,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 slash: {
-                    blue: '#0f172a',
-                    teal: '#06b6d4',
-                    gray: '#64748b',
-                    lightGray: '#f1f5f9',
+                    blue: '#2160CC',    // Logo blue
+                    teal: '#06b6d4',    // Keeping teal for contrast
+                    gray: '#64748b',    // Keeping gray
+                    lightGray: '#f1f5f9', // Keeping light gray
+                    green: '#37B34A',   // Logo green
+                    yellow: '#FFCE00',  // Logo yellow
+                    red: '#F15A29',     // Logo red
+                    purple: '#7E22CE',  // Adding purple for accents
                 }
 			},
 			borderRadius: {

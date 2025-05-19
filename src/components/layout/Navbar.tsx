@@ -35,10 +35,12 @@ const Navbar = () => {
 
   const navLinks = [
     { name: "Home", path: "/" },
-    { name: "About", path: "/about" },
-    { name: "Programs", path: "/programs" },
+    { name: "About Us", path: "/about" },
     { name: "Mentoring", path: "/mentoring" },
-    { name: "Contact", path: "/contact" }
+    { name: "Training", path: "/programs" },
+    { name: "Career", path: "/career" },
+    { name: "Contact", path: "/contact" },
+    { name: "Blog", path: "/blog" }
   ];
 
   return (
@@ -49,28 +51,32 @@ const Navbar = () => {
     >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2 z-50">
-          <span className="text-2xl font-bold">
-            Slash<span className="text-slash-teal">Zero</span>
-          </span>
+          <div className="w-36 md:w-48">
+            <img 
+              src="/lovable-uploads/a4fe551e-37d6-457e-9855-ec966dc6941a.png" 
+              alt="SlashZero Logo" 
+              className="w-full h-auto"
+            />
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-8">
+        <ul className="hidden md:flex space-x-6 lg:space-x-8">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 to={link.path}
                 className={`font-medium transition-colors duration-300 relative py-2 ${
                   isActive(link.path) 
-                    ? "text-slash-teal" 
-                    : "text-slate-700 hover:text-slash-teal"
+                    ? "text-slash-blue" 
+                    : "text-slate-700 hover:text-slash-blue"
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute left-0 bottom-0 w-full h-0.5 bg-slash-teal rounded-full"
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-slash-blue rounded-full"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -81,25 +87,18 @@ const Navbar = () => {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center space-x-4 z-40">
+        <div className="hidden md:block">
           <Button 
-            variant="outline" 
-            className="rounded-full px-6 font-medium border-slash-teal text-slash-teal hover:bg-slash-teal/5"
+            className="bg-slash-purple hover:bg-slash-purple/90 text-white rounded-md px-6 py-2 font-medium"
           >
-            Log In
-          </Button>
-          <Button 
-            className="bg-gradient-to-r from-slash-teal to-emerald-500 hover:from-slash-teal/90 hover:to-emerald-600 text-white rounded-full px-6 font-medium transition-all duration-300"
-            onClick={() => window.open("https://calendly.com", "_blank")}
-          >
-            Join Free Class
+            Get Started
           </Button>
         </div>
 
         {/* Mobile Navigation Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-slash-teal focus:outline-none z-50"
+          className="md:hidden text-slash-blue focus:outline-none z-50"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -122,8 +121,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`font-medium block py-2 ${
                       isActive(link.path)
-                        ? "text-slash-teal"
-                        : "text-slate-700 hover:text-slash-teal"
+                        ? "text-slash-blue"
+                        : "text-slate-700 hover:text-slash-blue"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -132,21 +131,11 @@ const Navbar = () => {
                 </li>
               ))}
             </ul>
-            <div className="flex flex-col space-y-3">
+            <div className="mt-4">
               <Button 
-                variant="outline" 
-                className="w-full rounded-full border-slash-teal text-slash-teal hover:bg-slash-teal/5"
+                className="w-full bg-slash-purple hover:bg-slash-purple/90 text-white rounded-md py-2 font-medium"
               >
-                Log In
-              </Button>
-              <Button 
-                className="w-full bg-gradient-to-r from-slash-teal to-emerald-500 hover:from-slash-teal/90 hover:to-emerald-600 text-white rounded-full transition-all duration-300"
-                onClick={() => {
-                  window.open("https://calendly.com", "_blank");
-                  setIsMenuOpen(false);
-                }}
-              >
-                Join Free Class
+                Get Started
               </Button>
             </div>
           </div>
