@@ -106,7 +106,7 @@
 
 @layer components {
   .gradient-btn {
-    @apply bg-gradient-to-r from-slash-blue to-slash-green text-white font-medium px-6 py-3 rounded-lg hover:from-slash-blue/90 hover:to-slash-green/90 transition-all duration-300 animate-gradient-flow bg-size-200 shadow-lg shadow-slash-blue/20;
+    @apply bg-gradient-to-r from-blue-600 to-slash-green text-white font-medium px-6 py-3 rounded-lg hover:from-blue-600/90 hover:to-slash-green/90 transition-all duration-300 animate-gradient-flow bg-size-200 shadow-lg shadow-blue-600/20;
   }
   
   .section-container {
@@ -114,7 +114,7 @@
   }
   
   .section-title {
-    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-slash-blue;
+    @apply text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center text-blue-600;
   }
 
   .card-hover {
@@ -162,3 +162,4 @@
     @apply bg-gradient-to-r from-purple-700 via-blue-600 to-teal-500;
   }
 }
+

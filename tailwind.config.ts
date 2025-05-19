@@ -64,14 +64,14 @@ export default {
 					ring: 'hsl(var(--sidebar-ring))'
 				},
                 slash: {
-                    blue: '#2160CC',    // Logo blue
-                    teal: '#06b6d4',    // Keeping teal for contrast
-                    gray: '#64748b',    // Keeping gray
-                    lightGray: '#f1f5f9', // Keeping light gray
-                    green: '#37B34A',   // Logo green
-                    yellow: '#FFCE00',  // Logo yellow
-                    red: '#F15A29',     // Logo red
-                    purple: '#7E22CE',  // Adding purple for accents
+                    blue: '#2160CC',    // Logo blue - kept the same
+                    teal: '#06b6d4',    // Teal for contrast - kept the same
+                    gray: '#64748b',    // Gray - kept the same
+                    lightGray: '#f1f5f9', // Light gray - kept the same
+                    green: '#37B34A',   // Logo green - kept the same
+                    yellow: '#FFCE00',  // Logo yellow - kept the same
+                    red: '#F15A29',     // Logo red - kept the same
+                    purple: '#7E22CE',  // Purple - kept the same from training page
                 }
 			},
 			borderRadius: {
@@ -130,3 +130,4 @@ export default {
 	},
 	plugins: [require("tailwindcss-animate")],
 } satisfies Config;
+

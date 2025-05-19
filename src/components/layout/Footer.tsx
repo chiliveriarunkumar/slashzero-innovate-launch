@@ -4,7 +4,7 @@ import { Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram } from "luc
 
 const Footer = () => {
   return (
-    <footer className="bg-slash-blue text-white pt-16 pb-8 relative overflow-hidden">
+    <footer className="bg-blue-600 text-white pt-16 pb-8 relative overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 left-0 w-full h-full">
@@ -144,3 +144,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

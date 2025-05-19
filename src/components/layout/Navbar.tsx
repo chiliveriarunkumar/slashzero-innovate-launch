@@ -68,15 +68,15 @@ const Navbar = () => {
                 to={link.path}
                 className={`font-medium transition-colors duration-300 relative py-2 ${
                   isActive(link.path) 
-                    ? "text-slash-blue" 
-                    : "text-slate-700 hover:text-slash-blue"
+                    ? "text-blue-600" 
+                    : "text-slate-700 hover:text-blue-600"
                 }`}
               >
                 {link.name}
                 {isActive(link.path) && (
                   <motion.div
                     layoutId="underline"
-                    className="absolute left-0 bottom-0 w-full h-0.5 bg-slash-blue rounded-full"
+                    className="absolute left-0 bottom-0 w-full h-0.5 bg-blue-600 rounded-full"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 0.3 }}
@@ -89,7 +89,7 @@ const Navbar = () => {
 
         <div className="hidden md:block">
           <Button 
-            className="bg-slash-purple hover:bg-slash-purple/90 text-white rounded-md px-6 py-2 font-medium"
+            className="bg-gradient-to-r from-blue-600 to-slash-green hover:opacity-90 text-white rounded-md px-6 py-2 font-medium"
           >
             Get Started
           </Button>
@@ -98,7 +98,7 @@ const Navbar = () => {
         {/* Mobile Navigation Button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-slash-blue focus:outline-none z-50"
+          className="md:hidden text-blue-600 focus:outline-none z-50"
           aria-label="Toggle menu"
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -121,8 +121,8 @@ const Navbar = () => {
                     to={link.path}
                     className={`font-medium block py-2 ${
                       isActive(link.path)
-                        ? "text-slash-blue"
-                        : "text-slate-700 hover:text-slash-blue"
+                        ? "text-blue-600"
+                        : "text-slate-700 hover:text-blue-600"
                     }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -133,7 +133,7 @@ const Navbar = () => {
             </ul>
             <div className="mt-4">
               <Button 
-                className="w-full bg-slash-purple hover:bg-slash-purple/90 text-white rounded-md py-2 font-medium"
+                className="w-full bg-gradient-to-r from-blue-600 to-slash-green hover:opacity-90 text-white rounded-md py-2 font-medium"
               >
                 Get Started
               </Button>
@@ -146,3 +146,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
