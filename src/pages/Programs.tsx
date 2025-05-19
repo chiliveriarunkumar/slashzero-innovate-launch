@@ -11,7 +11,11 @@ import {
   GraduationCap, 
   BookOpen, 
   Users, 
-  CheckCircle2 
+  CheckCircle2,
+  Rocket,
+  Monitor,
+  Wrench,
+  Terminal
 } from "lucide-react";
 
 const Programs = () => {
@@ -44,103 +48,86 @@ const Programs = () => {
 
   const programs = [
     {
-      title: "IoT & Robotics Fundamentals",
-      category: "Technology",
-      level: "Beginner to Intermediate",
-      description: "Build IoT devices and robotic systems from scratch with hands-on projects and real-world applications.",
+      title: "Introduction to Internet of Things (IoT)",
+      grade: "6th Grade",
+      level: "Beginner",
+      description: "Students focus on understanding basic IoT concepts and real-world applications using beginner-friendly tools and sensors. They'll learn to connect simple devices and create basic automation.",
       duration: "12 Weeks",
-      sessions: "24 Sessions",
+      sessions: "24 Sessions (2h/week)",
       nextBatch: "June 15, 2025",
-      features: ["Hands-on Projects", "Industry Expert Guidance", "Certification", "Job Placement Assistance"],
-      skills: ["Circuit Design", "Microcontrollers", "Sensor Integration", "AI Basics"],
-      image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmlydHVhbCUyMHJlYWxpdHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
+      features: ["Hands-on Projects", "Take-Home Kit", "Group Challenges", "End-of-Course Showcase"],
+      skills: ["Basic Electronics", "Simple Sensors", "LED Control", "Simple Programming"],
+      projects: ["Smart LED Light System", "Temperature Monitoring", "Simple Automation"],
+      image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW90fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
     },
     {
-      title: "Advanced Web Development",
-      category: "Programming",
-      level: "Intermediate to Advanced",
-      description: "Master modern web frameworks, APIs, and cloud deployment with focus on real-world application development.",
-      duration: "10 Weeks",
-      sessions: "20 Sessions",
-      nextBatch: "July 5, 2025",
-      features: ["Portfolio Building", "Code Reviews", "Mentorship", "Real Client Projects"],
-      skills: ["React", "Node.js", "Database Design", "AWS/Azure"],
-      image: "https://images.unsplash.com/photo-1587620962725-abab7fe55159?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y29kaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "Digital Marketing Mastery",
-      category: "Marketing",
-      level: "All Levels",
-      description: "Learn strategic digital marketing including SEO, social media, content marketing, and analytics to grow online presence.",
-      duration: "8 Weeks",
-      sessions: "16 Sessions",
-      nextBatch: "May 25, 2025",
-      features: ["Campaign Planning", "Growth Strategies", "Platform Mastery", "Analytics"],
-      skills: ["SEO", "Content Marketing", "Social Media", "Google Analytics"],
-      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRpZ2l0YWwlMjBtYXJrZXRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "Data Science & Analytics",
-      category: "Technology",
-      level: "Intermediate",
-      description: "Dive into data analysis, machine learning, and visualization techniques to extract insights from complex datasets.",
-      duration: "14 Weeks",
-      sessions: "28 Sessions",
-      nextBatch: "August 10, 2025",
-      features: ["Data Projects", "ML Models", "Visualization Tools", "Business Applications"],
-      skills: ["Python", "Statistical Analysis", "ML Algorithms", "Data Visualization"],
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8ZGF0YSUyMHNjaWVuY2V8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
-    },
-    {
-      title: "UI/UX Design Bootcamp",
-      category: "Design",
+      title: "IoT & Introduction to Robotics",
+      grade: "7th Grade",
       level: "Beginner to Intermediate",
-      description: "Create user-centered designs with focus on usability, accessibility, and engaging visual experiences.",
-      duration: "10 Weeks",
-      sessions: "20 Sessions",
-      nextBatch: "June 1, 2025",
-      features: ["Design Portfolio", "User Research", "Prototyping", "Industry Feedback"],
-      skills: ["Figma", "User Research", "Design Systems", "Prototyping"],
-      image: "https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHVpJTIwZGVzaWdufGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60"
+      description: "Building on IoT knowledge, students explore fundamental robotics concepts including sensors, actuators, and simple automation. They'll create devices that can sense and interact with their environment.",
+      duration: "14 Weeks",
+      sessions: "28 Sessions (2h/week)",
+      nextBatch: "July 5, 2025",
+      features: ["Advanced Components", "Robotics Kits", "Team Projects", "Mini Competitions"],
+      skills: ["Motor Control", "Actuators", "Simple Robotics", "Block Programming"],
+      projects: ["Obstacle Avoiding Robot", "Remote Controlled Device", "Automated Plant Watering System"],
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9ib3RpY3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     },
     {
-      title: "Blockchain Technology",
-      category: "Technology",
+      title: "IoT, Robotics & 3D Printing",
+      grade: "8th Grade",
+      level: "Intermediate",
+      description: "Students combine their skills to design functional prototypes and learn the basics of 3D modeling and printing. This program integrates multiple technologies to create more complex and innovative solutions.",
+      duration: "16 Weeks",
+      sessions: "32 Sessions (2h/week)",
+      nextBatch: "August 10, 2025",
+      features: ["3D Printing Access", "Advanced Components", "Design Software", "Engineering Principles"],
+      skills: ["3D Modeling", "CAD Design", "Integration", "Text-based Programming"],
+      projects: ["Custom Robot Parts", "Smart Home Model", "Interactive Prototype"],
+      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+    },
+    {
+      title: "Product Design & Development",
+      grade: "9th Grade",
       level: "Advanced",
-      description: "Explore blockchain development, smart contracts, and decentralized applications with hands-on projects.",
-      duration: "12 Weeks",
-      sessions: "24 Sessions",
-      nextBatch: "July 20, 2025",
-      features: ["Smart Contracts", "dApp Development", "Security Practices", "Industry Integration"],
-      skills: ["Solidity", "Web3.js", "DeFi Concepts", "Security Protocols"],
-      image: "https://images.unsplash.com/photo-1639322537228-f710d846310a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8YmxvY2tjaGFpbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60"
+      description: "Engage in integrated project-based learning focusing on innovation, prototyping, and real-world product development cycles. Students work on end-to-end projects with industry-standard methodologies.",
+      duration: "16 Weeks",
+      sessions: "32 Sessions (2h/week)",
+      nextBatch: "June 1, 2025",
+      features: ["Portfolio Development", "Mentorship", "Industry Feedback", "Innovation Showcase"],
+      skills: ["Project Management", "User Testing", "Advanced Programming", "Problem-Solving"],
+      projects: ["Full Product Prototype", "Market Analysis", "Presentation to Industry Experts"],
+      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3QlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60"
     }
   ];
 
   const upcomingWorkshops = [
     {
-      title: "AI for Business Innovation",
+      title: "Introduction to Arduino",
       date: "May 25, 2025",
       time: "10:00 AM - 1:00 PM",
-      instructor: "Dr. Sarah Chen",
+      instructor: "Dr. James Miller",
       price: "Free",
-      spots: "Limited to 40 participants"
+      spots: "Limited to 20 participants",
+      grade: "5th-7th Grade"
     },
     {
-      title: "Cybersecurity Essentials",
+      title: "3D Design Fundamentals",
       date: "June 5, 2025",
       time: "2:00 PM - 5:00 PM",
-      instructor: "Michael Rivera",
+      instructor: "Emily Zhang",
       price: "$49",
-      spots: "25 spots left"
+      spots: "15 spots left",
+      grade: "6th-9th Grade"
     },
     {
-      title: "Cloud Architecture Workshop",
+      title: "Robotics Challenge Day",
       date: "June 12, 2025",
       time: "9:00 AM - 4:00 PM",
-      instructor: "Priya Sharma",
+      instructor: "Alex Rivera",
       price: "$79",
-      spots: "10 spots left"
+      spots: "10 spots left",
+      grade: "7th-9th Grade"
     }
   ];
 
@@ -160,14 +147,14 @@ const Programs = () => {
               className="max-w-3xl"
             >
               <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Professional Development Programs
+                STEM Education Programs
               </span>
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                Transform Your Future with Our<br />
-                <span className="text-slash-teal">Specialized Training Programs</span>
+                Building Future <br />
+                <span className="text-slash-teal">Innovators & Problem Solvers</span>
               </h1>
               <p className="text-xl text-white/80 mb-8 max-w-2xl">
-                Join our industry-recognized training programs designed to equip you with in-demand skills and practical experience for the modern workplace.
+                Our grade-specific training programs provide students with the skills and knowledge to thrive in the digital world through hands-on learning and mentorship.
               </p>
               <div className="flex flex-wrap gap-4">
                 <Button 
@@ -182,7 +169,7 @@ const Programs = () => {
                   className="border-white/30 text-white hover:bg-white/10 py-6 px-8 rounded-lg text-lg"
                   onClick={() => document.getElementById('programs')?.scrollIntoView({ behavior: 'smooth' })}
                 >
-                  Browse All Programs
+                  Explore Programs
                 </Button>
               </div>
             </motion.div>
@@ -200,50 +187,110 @@ const Programs = () => {
           </div>
         </section>
 
-        {/* Featured Stats */}
-        <section className="py-12 bg-white border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <motion.div 
+        {/* Program Overview */}
+        <section className="py-16 bg-white">
+          <div className="section-container">
+            <div className="text-center mb-12">
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1, duration: 0.5 }}
-                className="text-center"
+                transition={{ duration: 0.5 }}
               >
-                <div className="text-4xl font-bold text-slash-blue mb-2">6+</div>
-                <p className="text-slate-600">Training Programs</p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.2, duration: 0.5 }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-slash-blue mb-2">5,000+</div>
-                <p className="text-slate-600">Students Trained</p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3, duration: 0.5 }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-slash-blue mb-2">85%</div>
-                <p className="text-slate-600">Job Placement Rate</p>
-              </motion.div>
-              
-              <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.4, duration: 0.5 }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-slash-blue mb-2">20+</div>
-                <p className="text-slate-600">Industry Partners</p>
+                <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
+                  Program Structure
+                </span>
+                <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-6">
+                  Training Program Structure
+                </h2>
+                <p className="text-slate-600 max-w-3xl mx-auto">
+                  Our comprehensive training programs are designed for students in grades 6-9, featuring 2 hours of weekly instruction over 12-16 weeks with hands-on mentorship from industry experts.
+                </p>
               </motion.div>
             </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+              {[
+                {
+                  icon: <Monitor className="h-8 w-8 text-slash-teal" />,
+                  title: "2-Hour Weekly Sessions",
+                  description: "Focused learning sessions designed to maximize engagement and retention"
+                },
+                {
+                  icon: <CalendarDays className="h-8 w-8 text-slash-teal" />,
+                  title: "12-16 Week Programs",
+                  description: "Comprehensive curriculum with progression through grade levels"
+                },
+                {
+                  icon: <Users className="h-8 w-8 text-slash-teal" />,
+                  title: "Small Class Sizes",
+                  description: "Maximum 15 students per class for personalized attention"
+                },
+                {
+                  icon: <Rocket className="h-8 w-8 text-slash-teal" />,
+                  title: "Project-Based Learning",
+                  description: "Hands-on projects that build real-world skills and portfolios"
+                }
+              ].map((item, index) => (
+                <motion.div 
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.5 }}
+                  className="bg-white p-6 rounded-xl shadow-sm border border-slate-100 text-center"
+                >
+                  <div className="mb-4 mx-auto bg-slash-teal/10 p-3 rounded-full w-16 h-16 flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-slash-blue mb-2">{item.title}</h3>
+                  <p className="text-slate-600">{item.description}</p>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.div 
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.3 }}
+              className="bg-slash-lightGray p-8 rounded-2xl border border-slate-200"
+            >
+              <h3 className="text-2xl font-bold text-slash-blue mb-6 text-center">Grade-Based Progression</h3>
+              <div className="space-y-6">
+                {[
+                  {
+                    grade: "6th Grade",
+                    title: "Introduction to Internet of Things (IoT)",
+                    description: "Focus on understanding basic IoT concepts and real-world applications using beginner-friendly tools and sensors."
+                  },
+                  {
+                    grade: "7th Grade",
+                    title: "Basics of IoT + Introduction to Robotics",
+                    description: "Build on IoT knowledge and explore fundamental robotics concepts like sensors, actuators, and simple automation."
+                  },
+                  {
+                    grade: "8th Grade",
+                    title: "IoT + Robotics (Intermediate) + Introduction to 3D Printing",
+                    description: "Combine skills from previous grades to design functional prototypes, and learn the basics of 3D modeling and printing."
+                  },
+                  {
+                    grade: "9th Grade",
+                    title: "IoT + Robotics + 3D Printing + Product Design & Development",
+                    description: "Engage in integrated project-based learning focusing on innovation, prototyping, and real-world product development cycles."
+                  }
+                ].map((item, index) => (
+                  <div key={index} className="flex flex-col md:flex-row p-4 bg-white rounded-xl shadow-sm gap-4 border border-slate-100">
+                    <div className="md:w-1/6 flex items-center justify-center">
+                      <span className="bg-slash-blue text-white text-lg font-bold py-2 px-4 rounded-lg">
+                        {item.grade}
+                      </span>
+                    </div>
+                    <div className="md:w-5/6">
+                      <h4 className="text-lg font-semibold text-slash-blue mb-2">{item.title}</h4>
+                      <p className="text-slate-600">{item.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
           </div>
         </section>
 
@@ -252,18 +299,18 @@ const Programs = () => {
           <div className="section-container">
             <div className="text-center mb-16">
               <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Our Offerings
+                Our Programs
               </span>
               <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-4">
-                Professional Training Programs
+                Comprehensive Training Programs
               </h2>
               <p className="text-slate-600 max-w-2xl mx-auto">
-                Elevate your career with our comprehensive training programs designed by industry experts with a focus on practical, job-ready skills.
+                Explore our grade-specific training programs designed to build foundational skills in technology, engineering, and innovation
               </p>
             </div>
 
             <motion.div 
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+              className="grid grid-cols-1 md:grid-cols-2 gap-8"
               variants={containerVariants}
               initial="hidden"
               animate="visible"
@@ -274,68 +321,70 @@ const Programs = () => {
                   variants={itemVariants}
                   className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full"
                 >
-                  <div className="h-48 overflow-hidden relative">
-                    <img 
-                      src={program.image} 
-                      alt={program.title} 
-                      className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
-                    />
-                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slash-teal px-3 py-1 rounded-full text-sm font-medium">
-                      {program.category}
-                    </div>
-                  </div>
-                  
-                  <div className="p-6 flex-grow flex flex-col">
-                    <div className="mb-4">
-                      <span className="text-sm text-slate-500 mb-2 flex items-center">
-                        <GraduationCap className="h-4 w-4 mr-1" />
-                        {program.level}
-                      </span>
-                      <h3 className="text-xl font-bold text-slash-blue mb-2">
-                        {program.title}
-                      </h3>
-                      <p className="text-slate-600 mb-4">
-                        {program.description}
-                      </p>
-                    </div>
-                    
-                    <div className="grid grid-cols-2 gap-3 text-sm mb-5">
-                      <div className="flex items-center text-slate-600">
-                        <Clock className="h-4 w-4 mr-2 text-slash-teal" />
-                        {program.duration}
-                      </div>
-                      <div className="flex items-center text-slate-600">
-                        <BookOpen className="h-4 w-4 mr-2 text-slash-teal" />
-                        {program.sessions}
-                      </div>
-                      <div className="flex items-center text-slate-600 col-span-2">
-                        <CalendarDays className="h-4 w-4 mr-2 text-slash-teal" />
-                        Next Batch: {program.nextBatch}
+                  <div className="md:flex">
+                    <div className="md:w-2/5 h-64 md:h-auto relative overflow-hidden">
+                      <img 
+                        src={program.image} 
+                        alt={program.title} 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
+                      />
+                      <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slash-teal px-3 py-1 rounded-full text-sm font-medium">
+                        {program.grade}
                       </div>
                     </div>
                     
-                    <div className="mb-4">
-                      <h4 className="text-sm font-semibold text-slash-blue mb-2">Key Features:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {program.features.map((feature, i) => (
-                          <span 
-                            key={i} 
-                            className="inline-flex items-center text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full"
-                          >
-                            <CheckCircle2 className="h-3 w-3 mr-1 text-slash-teal" />
-                            {feature}
-                          </span>
-                        ))}
+                    <div className="p-6 md:w-3/5">
+                      <div className="mb-4">
+                        <span className="text-sm text-slate-500 mb-2 flex items-center">
+                          <GraduationCap className="h-4 w-4 mr-1" />
+                          {program.level}
+                        </span>
+                        <h3 className="text-xl font-bold text-slash-blue mb-2">
+                          {program.title}
+                        </h3>
+                        <p className="text-slate-600 mb-4">
+                          {program.description}
+                        </p>
                       </div>
-                    </div>
-                    
-                    <div className="mt-auto">
-                      <Button 
-                        className="w-full bg-slash-blue hover:bg-slash-blue/90 text-white"
-                        onClick={() => window.open("https://calendly.com", "_blank")}
-                      >
-                        Enroll Now
-                      </Button>
+                      
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mb-5">
+                        <div className="flex items-center text-slate-600">
+                          <Clock className="h-4 w-4 mr-2 text-slash-teal" />
+                          {program.duration}
+                        </div>
+                        <div className="flex items-center text-slate-600">
+                          <BookOpen className="h-4 w-4 mr-2 text-slash-teal" />
+                          {program.sessions}
+                        </div>
+                        <div className="flex items-center text-slate-600 col-span-2">
+                          <CalendarDays className="h-4 w-4 mr-2 text-slash-teal" />
+                          Next Batch: {program.nextBatch}
+                        </div>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-sm font-semibold text-slash-blue mb-2">Key Projects:</h4>
+                        <div className="flex flex-wrap gap-2">
+                          {program.projects.map((project, i) => (
+                            <span 
+                              key={i} 
+                              className="inline-flex items-center text-xs bg-slash-teal/10 text-slate-700 px-2 py-1 rounded-full"
+                            >
+                              <CheckCircle2 className="h-3 w-3 mr-1 text-slash-teal" />
+                              {project}
+                            </span>
+                          ))}
+                        </div>
+                      </div>
+                      
+                      <div className="mt-auto">
+                        <Button 
+                          className="w-full bg-slash-blue hover:bg-slash-blue/90 text-white"
+                          onClick={() => window.open("https://calendly.com", "_blank")}
+                        >
+                          Enroll Now
+                        </Button>
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -369,7 +418,12 @@ const Programs = () => {
                   className="bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 overflow-hidden border border-slate-100"
                 >
                   <div className="p-6">
-                    <h3 className="text-lg font-semibold text-slash-blue mb-3">{workshop.title}</h3>
+                    <div className="flex justify-between items-center mb-3">
+                      <h3 className="text-lg font-semibold text-slash-blue">{workshop.title}</h3>
+                      <span className="text-xs font-medium bg-slash-teal/10 text-slash-teal px-2 py-1 rounded-full">
+                        {workshop.grade}
+                      </span>
+                    </div>
                     
                     <div className="space-y-2 mb-4">
                       <div className="flex items-center text-sm text-slate-600">
@@ -406,7 +460,7 @@ const Programs = () => {
           </div>
         </section>
 
-        {/* Why Choose Us */}
+        {/* Learning Approach */}
         <section className="py-20 bg-white">
           <div className="section-container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -417,32 +471,32 @@ const Programs = () => {
                   transition={{ duration: 0.7 }}
                 >
                   <span className="inline-block text-slash-teal bg-slash-teal/10 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                    Why Choose Us
+                    Our Learning Approach
                   </span>
                   <h2 className="text-3xl md:text-4xl font-bold text-slash-blue mb-6">
-                    Training That Makes a <span className="text-slash-teal">Real Difference</span>
+                    Building <span className="text-slash-teal">Future-Ready Skills</span>
                   </h2>
                   <p className="text-slate-600 mb-8">
-                    Our training programs are different because they focus on practical skills, real-world projects, and job readiness. We don't just teach theory - we prepare you to excel in your career.
+                    Our training programs focus on project-based learning that builds technical skills while fostering creativity, problem-solving, and collaboration – essential skills for the future workforce.
                   </p>
                   
                   <div className="space-y-4">
                     {[
                       {
-                        title: "Industry-Expert Instructors",
-                        description: "Learn from professionals with years of real-world experience"
+                        title: "Hands-on Learning",
+                        description: "Students spend 80% of their time building real projects"
                       },
                       {
-                        title: "Project-Based Learning",
-                        description: "Build a portfolio of projects that showcase your new skills"
+                        title: "Expert Mentorship",
+                        description: "Learn from industry professionals with real-world experience"
                       },
                       {
-                        title: "Small Batch Sizes",
-                        description: "Personalized attention with maximum 25 students per batch"
+                        title: "Progressive Curriculum",
+                        description: "Each grade builds on previous knowledge with increasing complexity"
                       },
                       {
-                        title: "Placement Assistance",
-                        description: "Get help with resume building, interviews, and job placement"
+                        title: "Portfolio Development",
+                        description: "Students create tangible projects to showcase their skills"
                       }
                     ].map((item, index) => (
                       <div key={index} className="flex">
@@ -467,15 +521,15 @@ const Programs = () => {
               >
                 <div className="aspect-[4/3] rounded-xl overflow-hidden shadow-2xl">
                   <img 
-                    src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRyYWluaW5nfGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" 
-                    alt="Training Session" 
+                    src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fGtpZHMlMjB0ZWNobm9sb2d5fGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60" 
+                    alt="Students Learning Robotics" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg max-w-xs hidden md:block">
                   <div className="flex items-start">
-                    <div className="text-4xl font-bold text-slash-teal mr-3">97%</div>
-                    <p className="text-sm text-slate-600">of our students recommend our programs to others</p>
+                    <div className="text-4xl font-bold text-slash-teal mr-3">94%</div>
+                    <p className="text-sm text-slate-600">of our students continue with STEM subjects in high school and beyond</p>
                   </div>
                 </div>
               </motion.div>
@@ -493,9 +547,9 @@ const Programs = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Start Your Learning Journey?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Enroll Your Child?</h2>
                 <p className="text-lg text-white/80 mb-8">
-                  Get in touch with our admissions team to learn more about our programs, tuition options, and how we can help advance your career.
+                  Get in touch with our education team to learn more about our programs, discuss your child's interests, and find the perfect fit for their learning journey.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <Button 

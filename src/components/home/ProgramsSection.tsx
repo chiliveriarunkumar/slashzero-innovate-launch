@@ -1,20 +1,22 @@
 
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Clock, Users, CalendarDays } from "lucide-react";
+import { ArrowRight, Clock, Users, CalendarDays, BookOpen, GraduationCap } from "lucide-react";
 import { useNavigate } from "react-router-dom";
+import { Card, CardContent } from "@/components/ui/card";
 
 interface ProgramCardProps {
   title: string;
   description: string;
   image: string;
   index: number;
+  grade: string;
   duration: string;
-  instructor: string;
-  startDate: string;
+  level: string;
+  skills: string[];
 }
 
-const ProgramCard = ({ title, description, image, index, duration, instructor, startDate }: ProgramCardProps) => {
+const ProgramCard = ({ title, description, image, index, grade, duration, level, skills }: ProgramCardProps) => {
   const cardRef = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
   
@@ -41,19 +43,22 @@ const ProgramCard = ({ title, description, image, index, duration, instructor, s
   }, []);
 
   return (
-    <div 
-      className="rounded-xl overflow-hidden shadow-md bg-white hover:shadow-xl transition-all duration-300 appear-animation border border-slate-100"
+    <Card 
+      className="overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 appear-animation border border-slate-100"
       style={{ animationDelay: `${index * 150}ms` }}
       ref={cardRef}
     >
-      <div className="h-48 overflow-hidden">
+      <div className="h-48 overflow-hidden relative">
         <img 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 hover:scale-110" 
         />
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-slash-teal px-3 py-1 rounded-full text-sm font-medium">
+          {grade}
+        </div>
       </div>
-      <div className="p-6">
+      <CardContent className="p-6">
         <h3 className="text-xl font-semibold text-slash-blue mb-2">{title}</h3>
         <p className="text-gray-600 mb-4">{description}</p>
         
@@ -63,13 +68,24 @@ const ProgramCard = ({ title, description, image, index, duration, instructor, s
             {duration}
           </div>
           <div className="flex items-center text-slate-600">
-            <Users className="h-4 w-4 mr-2 text-slash-teal" />
-            {instructor}
+            <GraduationCap className="h-4 w-4 mr-2 text-slash-teal" />
+            {level}
           </div>
           <div className="flex items-center text-slate-600 col-span-2">
-            <CalendarDays className="h-4 w-4 mr-2 text-slash-teal" />
-            Starts: {startDate}
+            <BookOpen className="h-4 w-4 mr-2 text-slash-teal" />
+            Key Skills
           </div>
+        </div>
+        
+        <div className="mb-4 flex flex-wrap gap-2">
+          {skills.map((skill, i) => (
+            <span 
+              key={i} 
+              className="inline-flex items-center text-xs bg-slate-100 text-slate-700 px-2 py-1 rounded-full"
+            >
+              {skill}
+            </span>
+          ))}
         </div>
         
         <Button 
@@ -79,8 +95,8 @@ const ProgramCard = ({ title, description, image, index, duration, instructor, s
         >
           Learn More <ArrowRight className="ml-2 h-4 w-4" />
         </Button>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 };
 
@@ -112,44 +128,40 @@ const ProgramsSection = () => {
 
   const programs = [
     {
-      title: "IoT & Robotics",
-      description: "Learn to build connected sensors, wireless systems, and automated robots with hands-on projects.",
+      title: "Introduction to IoT",
+      grade: "6th Grade",
+      description: "Explore basic IoT concepts and real-world applications using beginner-friendly tools and sensors.",
       image: "https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8aW90fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
       duration: "12 weeks",
-      instructor: "Dr. James Miller",
-      startDate: "June 15, 2025"
+      level: "Beginner",
+      skills: ["Sensors", "Basic Circuits", "Problem Solving", "LED Projects"]
     },
     {
-      title: "3D Printing",
-      description: "Master prototyping and fabrication techniques using cutting-edge 3D printing technology.",
-      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "10 weeks",
-      instructor: "Emily Zhang",
-      startDate: "July 5, 2025"
-    },
-    {
-      title: "AR & VR",
-      description: "Create immersive experiences and applications using augmented and virtual reality technologies.",
-      image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8dmlydHVhbCUyMHJlYWxpdHl8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "8 weeks",
-      instructor: "Alex Rivera",
-      startDate: "August 10, 2025"
-    },
-    {
-      title: "Digital Marketing",
-      description: "Learn effective strategies for SEO, social media, and advertising to grow digital presence.",
-      image: "https://images.unsplash.com/photo-1533750516457-a7f992034fec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGRpZ2l0YWwlMjBtYXJrZXRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
-      duration: "6 weeks",
-      instructor: "Sarah Johnson",
-      startDate: "May 25, 2025"
-    },
-    {
-      title: "App Development",
-      description: "Build modern mobile applications for iOS and Android platforms with industry-standard tools.",
-      image: "https://images.unsplash.com/photo-1581276879432-15e50529f34b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGFwcCUyMGRldmVsb3BtZW50fGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60",
+      title: "IoT & Robotics Basics",
+      grade: "7th Grade",
+      description: "Build on IoT knowledge and explore fundamental robotics concepts like sensors, actuators, and automation.",
+      image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cm9ib3RpY3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
       duration: "14 weeks",
-      instructor: "Michael Chen",
-      startDate: "June 1, 2025"
+      level: "Intermediate",
+      skills: ["Actuators", "Motor Control", "Simple Automation", "Coding Basics"]
+    },
+    {
+      title: "IoT, Robotics & 3D Printing",
+      grade: "8th Grade",
+      description: "Combine skills to design functional prototypes and learn the basics of 3D modeling and printing.",
+      image: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8M2QlMjBwcmludGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60",
+      duration: "16 weeks",
+      level: "Intermediate",
+      skills: ["3D Modeling", "Prototyping", "Integration", "Design Thinking"]
+    },
+    {
+      title: "Product Design & Development",
+      grade: "9th Grade",
+      description: "Engage in project-based learning focusing on innovation, prototyping, and real-world product development.",
+      image: "https://images.unsplash.com/photo-1581291518633-83b4ebd1d83e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2R1Y3QlMjBkZXNpZ258ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60",
+      duration: "16 weeks",
+      level: "Advanced",
+      skills: ["Innovation", "Project Management", "User Testing", "Full Prototype"]
     }
   ];
 
@@ -159,10 +171,10 @@ const ProgramsSection = () => {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12">
           <div>
             <h2 className="section-title appear-animation mb-3 md:mb-0 text-left" ref={sectionRef}>
-              Featured <span className="text-slash-teal">Programs</span>
+              STEM <span className="text-slash-teal">Training Programs</span>
             </h2>
             <p className="text-slate-600 max-w-2xl">
-              Our most popular professional training programs designed to prepare you for in-demand careers
+              Comprehensive 2-hour weekly sessions with hands-on learning and mentorship for students in grades 6-9
             </p>
           </div>
           <Button 
@@ -174,7 +186,7 @@ const ProgramsSection = () => {
           </Button>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {programs.map((program, index) => (
             <ProgramCard
               key={index}
@@ -182,9 +194,10 @@ const ProgramsSection = () => {
               description={program.description}
               image={program.image}
               index={index}
+              grade={program.grade}
               duration={program.duration}
-              instructor={program.instructor}
-              startDate={program.startDate}
+              level={program.level}
+              skills={program.skills}
             />
           ))}
         </div>
@@ -195,7 +208,7 @@ const ProgramsSection = () => {
             style={{ animationDelay: '600ms' }}
             onClick={() => navigate('/programs')}
           >
-            Explore All Courses
+            Explore All Programs
           </Button>
         </div>
       </div>
