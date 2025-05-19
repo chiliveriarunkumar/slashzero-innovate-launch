@@ -7,6 +7,8 @@ import WhySection from "@/components/home/WhySection";
 import CategoriesSection from "@/components/home/CategoriesSection";
 import ProgramsSection from "@/components/home/ProgramsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
+import ShowcasePrograms from "@/components/home/ShowcasePrograms";
+import ExpertiseSection from "@/components/home/ExpertiseSection";
 
 const Index = () => {
   // Scroll to top when the page loads
@@ -19,6 +21,8 @@ const Index = () => {
       <Navbar />
       <main className="flex-grow pt-20">
         <Hero />
+        <ExpertiseSection />
+        <ShowcasePrograms />
         <WhySection />
         <CategoriesSection />
         <ProgramsSection />
