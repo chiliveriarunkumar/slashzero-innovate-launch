@@ -1,7 +1,8 @@
+
 import { useEffect, useRef } from "react";
 import {
   Computer,
-  Robot,
+  Bot,
   Code,
 } from "lucide-react";
 import { ArVr, MobileApps, CloudComputing } from "@/components/ui/lucide-extended";
@@ -11,7 +12,7 @@ const technologies = [
   {
     id: 1,
     title: "IoT & Robotics",
-    icon: <Robot className="h-8 w-8 text-blue-600" />
+    icon: <Bot className="h-8 w-8 text-blue-600" />
   },
   {
     id: 2,
@@ -26,7 +27,7 @@ const technologies = [
   {
     id: 4,
     title: "Drone Technology",
-    icon: <Robot className="h-8 w-8 text-orange-600" />
+    icon: <Bot className="h-8 w-8 text-orange-600" />
   },
   {
     id: 5,
@@ -41,7 +42,7 @@ const technologies = [
   {
     id: 7,
     title: "AI & ML",
-    icon: <Robot className="h-8 w-8 text-purple-600" />
+    icon: <Bot className="h-8 w-8 text-purple-600" />
   },
   {
     id: 8,
