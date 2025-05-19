@@ -1,5 +1,4 @@
-
-import { Graduation, Rocket, Award, Users, Lightbulb } from "lucide-react";
+import { GraduationCap, Rocket, Award, Users, Lightbulb } from "lucide-react";
 import { useEffect, useRef } from "react";
 
 interface WhyItemProps {
@@ -60,7 +59,7 @@ const WhySection = () => {
     {
       title: "Industry-Aligned Training",
       description: "Our programs are designed in collaboration with industry leaders to ensure skills that are relevant and in-demand.",
-      icon: <Graduation className="h-5 w-5" />
+      icon: <GraduationCap className="h-5 w-5" />
     },
     {
       title: "Expert Mentors",
