@@ -90,6 +90,7 @@ const Navbar = () => {
         <div className="hidden md:block">
           <Button 
             className="bg-gradient-to-r from-blue-600 to-slash-green hover:opacity-90 text-white rounded-md px-6 py-2 font-medium"
+            onClick={() => window.location.href = "/programs"}
           >
             Get Started
           </Button>
@@ -134,6 +135,10 @@ const Navbar = () => {
             <div className="mt-4">
               <Button 
                 className="w-full bg-gradient-to-r from-blue-600 to-slash-green hover:opacity-90 text-white rounded-md py-2 font-medium"
+                onClick={() => {
+                  window.location.href = "/programs";
+                  setIsMenuOpen(false);
+                }}
               >
                 Get Started
               </Button>
@@ -146,4 +151,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

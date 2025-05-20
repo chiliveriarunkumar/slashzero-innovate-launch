@@ -1,10 +1,11 @@
-
 import { useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Clock, Users, Calendar, Book, Award, CheckCircle2, Rocket, Download, Lightbulb } from "lucide-react";
+import StudentProjects from "@/components/home/StudentProjects";
+import { Link } from "react-router-dom";
 
 const Programs = () => {
   // Scroll to top when page loads
@@ -38,14 +39,21 @@ const Programs = () => {
                 Empowering young minds with hands-on technology education through progressive, age-appropriate curriculum
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Button 
-                  className="bg-gradient-to-r from-blue-600 to-slash-teal hover:opacity-90 text-white py-6 px-8 text-lg rounded-lg shadow-lg shadow-slash-teal/20"
-                >
-                  Enroll Your School
-                </Button>
+                <Link to="/contact">
+                  <Button 
+                    className="bg-gradient-to-r from-blue-600 to-slash-teal hover:opacity-90 text-white py-6 px-8 text-lg rounded-lg shadow-lg shadow-slash-teal/20"
+                  >
+                    Enroll Your School
+                  </Button>
+                </Link>
                 <Button 
                   variant="outline" 
                   className="border-slate-300 text-slate-700 hover:bg-slate-50 py-6 px-8 rounded-lg text-lg flex items-center gap-2"
+                  onClick={() => {
+                    // In a real app, this would trigger a file download
+                    // For now, we'll just show a toast message
+                    alert("Curriculum download initiated.");
+                  }}
                 >
                   <Download className="h-5 w-5" />
                   Download Curriculum
@@ -383,77 +391,8 @@ const Programs = () => {
           </div>
         </section>
 
-        {/* Sample Projects */}
-        <section className="py-20 bg-slate-50">
-          <div className="section-container">
-            <div className="text-center mb-16">
-              <span className="inline-block text-blue-500 bg-blue-50 px-4 py-1 rounded-full text-sm font-medium mb-4">
-                Student Innovations
-              </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-                Sample Student Projects
-              </h2>
-              <p className="text-slate-600 max-w-3xl mx-auto">
-                See what students can create through our progressive curriculum
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {
-                  grade: "6th Grade",
-                  title: "Smart Plant Monitor",
-                  description: "An IoT device that monitors soil moisture and sunlight, alerting when plants need attention."
-                },
-                {
-                  grade: "7th Grade",
-                  title: "Automated Sorting Robot",
-                  description: "A robot that can identify and sort different colored objects using sensors and simple mechanics."
-                },
-                {
-                  grade: "8th Grade",
-                  title: "Weather Station with 3D Printed Housing",
-                  description: "A weather monitoring system with custom-designed 3D printed enclosure for outdoor durability."
-                },
-                {
-                  grade: "8th Grade",
-                  title: "Interactive Smart Mirror",
-                  description: "A reflective display that shows time, weather, and personalized information using embedded electronics."
-                },
-                {
-                  grade: "9th Grade",
-                  title: "Assistive Device for Visually Impaired",
-                  description: "A wearable tool that uses sensors to detect obstacles and provide haptic feedback to users."
-                },
-                {
-                  grade: "9th Grade",
-                  title: "Sustainable Energy Monitor",
-                  description: "A system that tracks and visualizes energy usage, promoting conservation through real-time feedback."
-                }
-              ].map((project, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-white rounded-xl overflow-hidden shadow-sm"
-                >
-                  <div className="h-48 bg-slate-200 flex items-center justify-center">
-                    <img src="/placeholder.svg" alt="Project image" className="w-16 h-16 opacity-30" />
-                  </div>
-                  <div className="p-6">
-                    <span className="inline-block text-xs font-medium text-blue-600 bg-blue-50 px-2 py-1 rounded-full mb-3">
-                      {project.grade}
-                    </span>
-                    <h3 className="text-lg font-bold text-slate-800 mb-2">{project.title}</h3>
-                    <p className="text-slate-600 text-sm">{project.description}</p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* Student Projects Section - Moved from home page to here */}
+        <StudentProjects />
 
         {/* Call to action */}
         <section className="py-16 bg-gradient-to-r from-blue-600 to-slate-900 text-white">
@@ -465,24 +404,27 @@ const Programs = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.5 }}
               >
-                <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Technology Education?</h2>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">Join the SlashZero Community</h2>
                 <p className="text-xl text-white/80 mb-8 max-w-2xl mx-auto">
-                  Join schools across the country implementing our progressive technology curriculum
+                  Take the first step towards mastering innovative technologies with our expert-led programs and mentorship.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
-                  <Button 
-                    className="bg-white text-blue-600 hover:bg-white/90 py-6 px-8 text-lg rounded-lg shadow-lg"
-                    onClick={() => window.open("https://calendly.com", "_blank")}
-                  >
-                    Schedule a Consultation
-                  </Button>
-                  <Button 
-                    variant="outline" 
-                    className="border-white/30 text-white hover:bg-white/10 py-6 px-8 text-lg rounded-lg flex items-center gap-2"
-                  >
-                    <Download className="h-5 w-5" />
-                    Download Information Packet
-                  </Button>
+                  <Link to="/contact">
+                    <Button 
+                      className="bg-white text-blue-600 hover:bg-white/90 py-6 px-8 text-lg rounded-lg shadow-lg"
+                    >
+                      Explore Our Programs
+                    </Button>
+                  </Link>
+                  <Link to="/contact">
+                    <Button 
+                      variant="outline" 
+                      className="border-white/30 text-white hover:bg-white/10 py-6 px-8 text-lg rounded-lg flex items-center gap-2"
+                    >
+                      <Download className="h-5 w-5" />
+                      Download Information Packet
+                    </Button>
+                  </Link>
                 </div>
               </motion.div>
             </div>

@@ -25,7 +25,7 @@ const ContactForm = () => {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
       // Show success message
-      toast.success("Message sent successfully! We'll get back to you soon.");
+      toast.success("Message sent successfully to info@slashzero.in! We'll get back to you soon.");
       
       // Reset form
       setName("");

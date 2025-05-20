@@ -27,7 +27,7 @@ const NewsletterSection = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Stay Updated with Latest Technologies
           </h2>
-          <p className="text-lg mb-8 text-white/80">
+          <p className="text-lg mb-8 text-white/90">
             Subscribe to our newsletter to receive updates about our programs, events, and technology trends.
           </p>
           
@@ -50,7 +50,7 @@ const NewsletterSection = () => {
             </Button>
           </form>
           
-          <p className="text-sm mt-4 text-white/60">
+          <p className="text-sm mt-4 text-white/70">
             We respect your privacy. Unsubscribe at any time.
           </p>
         </div>
