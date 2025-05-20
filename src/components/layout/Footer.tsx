@@ -35,22 +35,22 @@ const Footer = () => {
               Empowering innovation through applied technology and hands-on learning experiences.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
                 <Facebook size={18} />
               </a>
-              <a href="#" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
                 <Twitter size={18} />
               </a>
-              <a href="#" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
                 <Linkedin size={18} />
               </a>
-              <a href="#" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-slash-teal transition-colors p-2 bg-white/5 rounded-full">
                 <Instagram size={18} />
               </a>
             </div>
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
             <h4 className="text-lg font-semibold mb-4 text-white">Quick Links</h4>
             <ul className="space-y-2">
@@ -144,4 +144,3 @@ const Footer = () => {
 };
 
 export default Footer;
-

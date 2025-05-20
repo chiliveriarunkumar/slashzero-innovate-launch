@@ -9,6 +9,7 @@ import ProgramsSection from "@/components/home/ProgramsSection";
 import NewsletterSection from "@/components/home/NewsletterSection";
 import ShowcasePrograms from "@/components/home/ShowcasePrograms";
 import ExpertiseSection from "@/components/home/ExpertiseSection";
+import StudentProjects from "@/components/home/StudentProjects";
 
 const Index = () => {
   // Scroll to top when the page loads
@@ -23,6 +24,7 @@ const Index = () => {
         <Hero />
         <ExpertiseSection />
         <ShowcasePrograms />
+        <StudentProjects />
         <WhySection />
         <CategoriesSection />
         <ProgramsSection />
