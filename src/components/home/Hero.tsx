@@ -25,9 +25,9 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <img 
-              src="/lovable-uploads/30928fe0-05ca-4d09-b1f7-fa6c1e5fcfbf.png" 
-              alt="SlashZero Programs" 
-              className="h-24 w-auto"
+              src="/lovable-uploads/652c8bbc-192a-4aee-80ff-a6045193451e.png" 
+              alt="Rocket" 
+              className="h-24 animate-bounce-subtle"
             />
           </motion.div>
           
