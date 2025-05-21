@@ -12,8 +12,8 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen pt-24 pb-16 relative overflow-hidden flex items-center">
-      {/* Clean blue gradient background */}
-      <div className="absolute inset-0 bg-blue-500 z-0"></div>
+      {/* Blue to teal gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-teal-500 z-0"></div>
       
       <div className="section-container relative z-10 text-center text-white">
         <div className="space-y-6 max-w-4xl mx-auto">

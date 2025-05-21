@@ -44,8 +44,8 @@ const Mentoring = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-20">
-        {/* Hero Section - Updated with new image */}
-        <section className="bg-gradient-to-br from-blue-500 to-green-400 text-white py-16 md:py-24">
+        {/* Hero Section - Updated with new gradient and image */}
+        <section className="bg-gradient-to-br from-blue-500 to-teal-500 text-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div
@@ -71,7 +71,7 @@ const Mentoring = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1713588955077-2db13a72ff0f" 
+                  src="/lovable-uploads/efe60a94-710e-4528-9382-4e29c788f9c6.png" 
                   alt="Mentoring at SlashZero" 
                   className="rounded-xl shadow-lg"
                 />
