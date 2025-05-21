@@ -17,20 +17,6 @@ const Hero = () => {
       
       <div className="section-container relative z-10 text-center text-white">
         <div className="space-y-6 max-w-4xl mx-auto">
-          {/* Program cards small image centered above heading */}
-          <motion.div
-            className="flex justify-center mb-4"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <img 
-              src="/lovable-uploads/652c8bbc-192a-4aee-80ff-a6045193451e.png" 
-              alt="Rocket" 
-              className="h-24 animate-bounce-subtle"
-            />
-          </motion.div>
-          
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
