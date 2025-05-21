@@ -12,11 +12,12 @@ const Hero = () => {
 
   return (
     <section className="min-h-screen pt-24 pb-16 relative overflow-hidden flex items-center">
-      {/* Background with solid gradient instead of pattern overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-400 z-0"></div>
+      {/* Clean blue gradient background */}
+      <div className="absolute inset-0 bg-blue-500 z-0"></div>
       
       <div className="section-container relative z-10 text-center text-white">
         <div className="space-y-6 max-w-4xl mx-auto">
+          {/* Program cards small image centered above heading */}
           <motion.div
             className="flex justify-center mb-4"
             initial={{ opacity: 0, y: 30 }}
@@ -24,9 +25,9 @@ const Hero = () => {
             transition={{ duration: 0.7 }}
           >
             <img 
-              src="/lovable-uploads/652c8bbc-192a-4aee-80ff-a6045193451e.png" 
-              alt="Rocket" 
-              className="h-24 animate-bounce-subtle"
+              src="/lovable-uploads/30928fe0-05ca-4d09-b1f7-fa6c1e5fcfbf.png" 
+              alt="SlashZero Programs" 
+              className="h-24 w-auto"
             />
           </motion.div>
           
