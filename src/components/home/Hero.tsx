@@ -4,52 +4,46 @@ import { Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [videoOpen, setVideoOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <section className="min-h-screen pt-24 pb-16 relative overflow-hidden flex items-center">
-      {/* Background with gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slash-blue/90 to-slash-teal/70 z-0"></div>
-      
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-0 left-0 w-full h-full">
-          {Array.from({ length: 20 }).map((_, i) => (
-            <div
-              key={i}
-              className="absolute rounded-full bg-white"
-              style={{
-                left: `${Math.random() * 100}%`,
-                top: `${Math.random() * 100}%`,
-                width: `${Math.random() * 300 + 50}px`,
-                height: `${Math.random() * 300 + 50}px`,
-                opacity: Math.random() * 0.3,
-                animation: `float ${Math.random() * 10 + 10}s infinite ease-in-out`,
-                animationDelay: `${Math.random() * 5}s`,
-              }}
-            />
-          ))}
-        </div>
-      </div>
+      {/* Background with solid gradient instead of pattern overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-500 to-blue-400 z-0"></div>
       
       <div className="section-container relative z-10 text-center text-white">
         <div className="space-y-6 max-w-4xl mx-auto">
+          <motion.div
+            className="flex justify-center mb-4"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <img 
+              src="/lovable-uploads/652c8bbc-192a-4aee-80ff-a6045193451e.png" 
+              alt="Rocket" 
+              className="h-24 animate-bounce-subtle"
+            />
+          </motion.div>
+          
           <motion.h1 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight"
           >
-            🚀 Empowering Innovation through <span className="text-gradient bg-clip-text bg-gradient-to-r from-white via-slash-teal/90 to-white text-transparent">Applied Technology</span>
+            Empowering Innovation through <span className="text-gradient bg-clip-text bg-gradient-to-r from-teal-300 via-teal-200 to-teal-300 text-transparent">Applied Technology</span>
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-xl md:text-2xl text-white/80"
+            className="text-xl md:text-2xl text-white/90"
           >
             Bridging the gap between theory and practical innovation in IoT, Robotics, AI, Design, and Development.
           </motion.p>
@@ -61,8 +55,9 @@ const Hero = () => {
             className="flex flex-wrap justify-center gap-4 pt-6"
           >
             <Button 
-              className="bg-white text-slash-blue hover:bg-white/90 text-lg px-8 py-6 rounded-lg shadow-lg" 
+              className="bg-white text-blue-500 hover:bg-white/90 text-lg px-8 py-6 rounded-lg shadow-lg" 
               size="lg"
+              onClick={() => navigate('/programs')}
             >
               🎓 Explore Programs
             </Button>

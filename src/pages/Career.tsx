@@ -5,6 +5,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { GraduationCap, Rocket, Users, MapPin, Clock } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { useNavigate } from "react-router-dom";
 
 interface JobCardProps {
   title: string;
@@ -14,34 +15,41 @@ interface JobCardProps {
   isNew?: boolean;
 }
 
-const JobCard = ({ title, location, type, description, isNew = false }: JobCardProps) => (
-  <Card className="w-full bg-white shadow-md hover:shadow-lg transition-all duration-300">
-    <CardContent className="p-6">
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="text-xl font-bold text-slash-blue">{title}</h3>
-        {isNew && (
-          <span className="bg-slash-purple text-white px-3 py-1 text-xs font-semibold rounded-full">
-            New
-          </span>
-        )}
-      </div>
-      <div className="flex flex-wrap gap-3 mb-4">
-        <div className="flex items-center text-sm text-gray-500">
-          <MapPin className="h-4 w-4 mr-1" />
-          {location}
+const JobCard = ({ title, location, type, description, isNew = false }: JobCardProps) => {
+  const navigate = useNavigate();
+  
+  return (
+    <Card className="w-full bg-white shadow-md hover:shadow-lg transition-all duration-300">
+      <CardContent className="p-6">
+        <div className="flex justify-between items-start mb-4">
+          <h3 className="text-xl font-bold text-slash-blue">{title}</h3>
+          {isNew && (
+            <span className="bg-slash-purple text-white px-3 py-1 text-xs font-semibold rounded-full">
+              New
+            </span>
+          )}
         </div>
-        <div className="flex items-center text-sm text-gray-500">
-          <Clock className="h-4 w-4 mr-1" />
-          {type}
+        <div className="flex flex-wrap gap-3 mb-4">
+          <div className="flex items-center text-sm text-gray-500">
+            <MapPin className="h-4 w-4 mr-1" />
+            {location}
+          </div>
+          <div className="flex items-center text-sm text-gray-500">
+            <Clock className="h-4 w-4 mr-1" />
+            {type}
+          </div>
         </div>
-      </div>
-      <p className="text-gray-600 mb-5">{description}</p>
-      <Button className="bg-slash-purple hover:bg-slash-purple/90 text-white">
-        Apply Now
-      </Button>
-    </CardContent>
-  </Card>
-);
+        <p className="text-gray-600 mb-5">{description}</p>
+        <Button 
+          className="bg-slash-purple hover:bg-slash-purple/90 text-white"
+          onClick={() => navigate('/contact')}
+        >
+          Apply Now
+        </Button>
+      </CardContent>
+    </Card>
+  );
+};
 
 interface BenefitCardProps {
   title: string;
@@ -66,6 +74,8 @@ const BenefitCard = ({ icon, title, description }: BenefitCardProps) => (
 );
 
 const Career = () => {
+  const navigate = useNavigate();
+  
   // Scroll to top when the page loads
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -95,6 +105,18 @@ const Career = () => {
               We're building the future – and we need passionate minds. If you believe in empowering
               students and love working on exciting tech + ed projects, apply now.
             </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Button 
+                className="bg-white text-blue-600 hover:bg-white/90 px-8 py-3 text-lg rounded-full"
+                onClick={() => navigate('/contact')}
+              >
+                Send Your CV to info@slashzero.in
+              </Button>
+            </motion.div>
           </div>
         </section>
 
@@ -130,6 +152,74 @@ const Career = () => {
                 description="Join a diverse team of educators, technologists, and designers passionate about education."
               />
             </div>
+          </div>
+        </section>
+
+        {/* Internship Program Section - Adding new section */}
+        <section className="py-16 bg-slash-lightGray">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <motion.h2
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5 }}
+                className="text-3xl md:text-4xl font-bold text-slash-blue mb-6"
+              >
+                Internship Program
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="text-xl max-w-3xl mx-auto"
+              >
+                Join as an Intern for 6 Months, get trained on technology and become full-time employment
+              </motion.p>
+            </div>
+
+            <div className="bg-white rounded-xl shadow-md p-8 mb-8">
+              <h3 className="text-2xl font-bold text-slash-blue mb-4">Program Details</h3>
+              <ul className="space-y-3 text-gray-700 mb-6">
+                <li className="flex items-start">
+                  <div className="bg-green-100 p-1 rounded-full mt-1 mr-3">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <p>6-month intensive training on cutting-edge technologies</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-100 p-1 rounded-full mt-1 mr-3">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <p>Hands-on project experience with real-world applications</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-100 p-1 rounded-full mt-1 mr-3">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <p>Mentorship from industry professionals</p>
+                </li>
+                <li className="flex items-start">
+                  <div className="bg-green-100 p-1 rounded-full mt-1 mr-3">
+                    <Check className="h-4 w-4 text-green-600" />
+                  </div>
+                  <p>Opportunity for full-time employment upon successful completion</p>
+                </li>
+              </ul>
+              <div className="flex justify-center mt-6">
+                <Button 
+                  className="bg-slash-blue hover:bg-slash-blue/90 text-white px-8 py-3"
+                  onClick={() => navigate('/contact')}
+                >
+                  Apply for Internship
+                </Button>
+              </div>
+            </div>
+            
+            <p className="text-center text-gray-600 italic">
+              Please send your CV to info@slashzero.in with the subject line "Internship Application"
+            </p>
           </div>
         </section>
 

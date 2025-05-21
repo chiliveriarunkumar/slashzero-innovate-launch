@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Check, Award, Star, Users, Laptop, HardDrive } from "lucide-react";
@@ -16,8 +15,8 @@ const About = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="py-16 md:py-24 bg-gradient-to-br from-slash-blue to-slash-teal text-white">
+        {/* Hero Section - Updated with new background and layout */}
+        <section className="py-16 md:py-24 bg-gradient-to-br from-blue-500 to-blue-400 text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div
@@ -42,8 +41,8 @@ const About = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
-                  alt="SlashZero Team" 
+                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998" 
+                  alt="SlashZero Team Collaborating" 
                   className="rounded-xl shadow-lg"
                 />
               </motion.div>

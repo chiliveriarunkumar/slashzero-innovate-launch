@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Users, Award, Calendar, Lightbulb, BookOpen, MessageSquare } from "lucide-react";
@@ -45,8 +44,8 @@ const Mentoring = () => {
     <div className="min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-grow pt-20">
-        {/* Hero Section */}
-        <section className="bg-gradient-to-br from-slash-blue to-slash-green text-white py-16 md:py-24">
+        {/* Hero Section - Updated with new image */}
+        <section className="bg-gradient-to-br from-blue-500 to-green-400 text-white py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <motion.div
@@ -59,7 +58,7 @@ const Mentoring = () => {
                   Personalized, real-world guidance from industry experts across all tech and design domains. Connect with mentors who understand your journey.
                 </p>
                 <Button 
-                  className="bg-white text-slash-blue hover:bg-white/90 px-8 py-6 text-lg rounded-full"
+                  className="bg-white text-blue-600 hover:bg-white/90 px-8 py-6 text-lg rounded-full"
                   onClick={scrollToProcess}
                 >
                   Our Mentorship Process
@@ -72,7 +71,7 @@ const Mentoring = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1531482615713-2afd69097998?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80" 
+                  src="https://images.unsplash.com/photo-1713588955077-2db13a72ff0f" 
                   alt="Mentoring at SlashZero" 
                   className="rounded-xl shadow-lg"
                 />

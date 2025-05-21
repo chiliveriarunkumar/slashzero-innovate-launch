@@ -4,84 +4,72 @@ import {
   Bot,
   Code,
   Computer,
+  Rocket,
+  Cpu,
+  Lightbulb
 } from "lucide-react";
-import { ArVr, MobileApps, CloudComputing } from "@/components/ui/lucide-extended";
+import { ArVr } from "@/components/ui/lucide-extended";
 import { useNavigate } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 
+// Limited to requested technologies only
 const technologies = [
   {
     id: 1,
     title: "IoT & Robotics",
     icon: <Bot className="h-8 w-8 text-white" />,
-    description: "Build smart devices and autonomous systems that connect the physical and digital worlds. Learn embedded programming, sensor integration, and automation.",
+    description: "Build smart devices and autonomous systems that connect the physical and digital worlds.",
     image: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     iconBg: "bg-blue-600"
   },
   {
     id: 2,
-    title: "AR & VR",
+    title: "AR/VR Technology",
     icon: <ArVr className="h-8 w-8 text-white" />,
-    description: "Create immersive experiences that transform how we interact with digital content. Master 3D modeling, spatial computing, and interactive design.",
+    description: "Create immersive experiences that transform how we interact with digital content.",
     image: "https://images.unsplash.com/photo-1593508512255-86ab42a8e620?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     iconBg: "bg-purple-600"
   },
   {
     id: 3,
     title: "3D Printing",
-    icon: <Code className="h-8 w-8 text-white" />,
-    description: "Turn digital designs into physical objects. Learn CAD modeling, material science, and bring your ideas to life with additive manufacturing.",
+    icon: <Cpu className="h-8 w-8 text-white" />,
+    description: "Turn digital designs into physical objects with additive manufacturing.",
     image: "https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     iconBg: "bg-green-600"
   },
   {
     id: 4,
     title: "Drone Technology",
-    icon: <Bot className="h-8 w-8 text-white" />,
-    description: "Master aerial robotics and capture stunning perspectives. Learn flight dynamics, autonomous navigation, and applications in photography and delivery.",
+    icon: <Rocket className="h-8 w-8 text-white" />,
+    description: "Master aerial robotics for photography, delivery, and autonomous navigation.",
     image: "https://images.unsplash.com/photo-1506947411487-a56738267384?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     iconBg: "bg-orange-600"
   },
   {
     id: 5,
-    title: "Mobile Apps",
-    icon: <MobileApps className="h-8 w-8 text-white" />,
-    description: "Create applications that billions use daily. Master UI/UX design, cross-platform development, and learn to deploy to app stores worldwide.",
-    image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    iconBg: "bg-red-600"
+    title: "Innovative Design",
+    icon: <Lightbulb className="h-8 w-8 text-white" />,
+    description: "Product Development, PCB & Semi-Conductors design for real-world applications.",
+    image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
+    iconBg: "bg-pink-600"
   },
   {
     id: 6,
     title: "UI/UX Design",
     icon: <Code className="h-8 w-8 text-white" />,
-    description: "Shape how users interact with technology. Learn human-centered design principles, wireframing, prototyping, and usability testing.",
+    description: "Shape how users interact with technology through human-centered design principles.",
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    iconBg: "bg-pink-600"
+    iconBg: "bg-indigo-600"
   },
   {
     id: 7,
-    title: "AI & ML",
-    icon: <Bot className="h-8 w-8 text-white" />,
-    description: "Develop systems that learn and adapt. Master algorithms, neural networks, and create solutions for predictive analytics, computer vision, and NLP.",
-    image: "https://images.unsplash.com/photo-1507146153580-69a1fe6d8aa1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    iconBg: "bg-purple-600"
-  },
-  {
-    id: 8,
     title: "Digital Marketing",
     icon: <Computer className="h-8 w-8 text-white" />,
-    description: "Drive business growth with data-driven strategies. Learn SEO, social media marketing, analytics, and content creation in the digital landscape.",
+    description: "Drive business growth with data-driven strategies and content creation.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
     iconBg: "bg-blue-600"
-  },
-  {
-    id: 9,
-    title: "Cloud Computing",
-    icon: <CloudComputing className="h-8 w-8 text-white" />,
-    description: "Build scalable infrastructure that powers modern applications. Learn AWS, Azure, or Google Cloud, containerization, and serverless architecture.",
-    image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60",
-    iconBg: "bg-blue-600"
-  },
+  }
 ];
 
 const TechItem = ({ title, icon, description, image, iconBg, index }: { 
@@ -144,12 +132,7 @@ const TechItem = ({ title, icon, description, image, iconBg, index }: {
         </div>
       </div>
       <CardContent>
-        <p className="text-gray-600 mt-2 text-sm">{description}</p>
-        <div className="mt-4">
-          <button className="text-blue-600 text-sm font-medium hover:underline">
-            Learn more →
-          </button>
-        </div>
+        <p className="text-gray-600 mt-2">{description}</p>
       </CardContent>
     </Card>
   );
